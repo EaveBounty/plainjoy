@@ -15,9 +15,9 @@
 - 语言：中文（简体）
 - 许可：PolyForm Noncommercial License 1.0.0（**非 OSI 开源**，商业使用需授权）
 
-![清欢开屏界面](docs/screenshots/01-splash.png)
-![清欢首次引导界面](docs/screenshots/02-onboarding.png)
-![清欢首页与宠物界面](docs/screenshots/03-home.png)
+![清欢开屏界面](docs/assets/shots/splash.webp)
+![清欢首次引导界面](docs/assets/shots/onboarding.webp)
+![清欢首页与宠物界面](docs/assets/shots/home.webp)
 
 ---
 
