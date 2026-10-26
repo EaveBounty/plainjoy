@@ -243,24 +243,31 @@ class NutrientTargets {
     );
   }
 
-  Map<String, double> get asMap => {
-        NutrientCode.energy: energy,
-        NutrientCode.protein: protein,
-        NutrientCode.fiber: fiber,
-        NutrientCode.calcium: calcium,
-        NutrientCode.iron: iron,
-        NutrientCode.vitaminA: vitaminA,
-        NutrientCode.vitaminC: vitaminC,
-        NutrientCode.folate: folate,
-        NutrientCode.vitaminB12: vitaminB12,
-        NutrientCode.sodium: sodiumOk,
-        NutrientCode.sugar: sugarLimit,
-        NutrientCode.sfa: sfaLimitG,
-        if (potassium != null) NutrientCode.potassium: potassium!,
-        if (phosphorus != null) NutrientCode.phosphorus: phosphorus!,
-        if (magnesium != null) NutrientCode.magnesium: magnesium!,
-        if (iodine != null) NutrientCode.iodine: iodine!,
-        if (cholesterolLimit != null) NutrientCode.cholesterol: cholesterolLimit!,
-        if (water != null) NutrientCode.water: water!,
-      };
+  Map<String, double> get asMap {
+    final map = <String, double>{
+      NutrientCode.energy: energy,
+      NutrientCode.protein: protein,
+      NutrientCode.fiber: fiber,
+      NutrientCode.calcium: calcium,
+      NutrientCode.iron: iron,
+      NutrientCode.vitaminA: vitaminA,
+      NutrientCode.vitaminC: vitaminC,
+      NutrientCode.folate: folate,
+      NutrientCode.vitaminB12: vitaminB12,
+      NutrientCode.sodium: sodiumOk,
+      NutrientCode.sugar: sugarLimit,
+      NutrientCode.sfa: sfaLimitG,
+    };
+    void put(String code, double? value) {
+      if (value != null) map[code] = value;
+    }
+
+    put(NutrientCode.potassium, potassium);
+    put(NutrientCode.phosphorus, phosphorus);
+    put(NutrientCode.magnesium, magnesium);
+    put(NutrientCode.iodine, iodine);
+    put(NutrientCode.cholesterol, cholesterolLimit);
+    put(NutrientCode.water, water);
+    return map;
+  }
 }

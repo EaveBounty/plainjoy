@@ -73,7 +73,7 @@ String relativeDayLabel(String key) {
   if (diff == -1) return '昨天';
   if (diff == 1) return '明天';
   if (diff < -1 && diff >= -6) return '${-diff} 天前';
-  if (diff > 1 && diff <= 6) return '${diff} 天后';
+  if (diff > 1 && diff <= 6) return '$diff 天后';
   return formatDate(key);
 }
 

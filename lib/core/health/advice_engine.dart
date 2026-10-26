@@ -3,7 +3,6 @@ import '../models/enums.dart';
 import '../models/nutrients.dart';
 import '../models/profile.dart';
 import '../scoring/nutrient_targets.dart';
-import 'condition_policy.dart';
 
 class HealthAdvice {
   final String title;
@@ -37,8 +36,6 @@ class AdviceEngine {
     final out = <HealthAdvice>[];
     final sodium = totals[NutrientCode.sodium] ?? 0;
     final fiber = totals[NutrientCode.fiber] ?? 0;
-    final protein = totals[NutrientCode.protein] ?? 0;
-    final calcium = totals[NutrientCode.calcium] ?? 0;
     final iron = totals[NutrientCode.iron] ?? 0;
     final vc = totals[NutrientCode.vitaminC] ?? 0;
     final sugar = totals[NutrientCode.sugar] ?? 0;
