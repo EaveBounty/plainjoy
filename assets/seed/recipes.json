@@ -1,0 +1,1393 @@
+[
+  {
+    "id": "r_oats_bowl",
+    "name": "牛奶燕麦香蕉碗",
+    "category": "breakfast",
+    "description": "5 分钟早餐，纤维和钙都够。",
+    "ingredients": [
+      {
+        "foodId": "oats",
+        "grams": 50
+      },
+      {
+        "foodId": "milk",
+        "grams": 250
+      },
+      {
+        "foodId": "banana",
+        "grams": 100
+      },
+      {
+        "foodId": "almonds",
+        "grams": 10
+      }
+    ],
+    "equipment": [
+      "microwave"
+    ],
+    "minutes": 5,
+    "costYuan": 8,
+    "difficulty": "easy",
+    "steps": [
+      "燕麦加牛奶，微波 2 分钟",
+      "铺香蕉片和坚果"
+    ],
+    "tasteTags": [
+      "清淡",
+      "甜"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_whole_sandwich",
+    "name": "全麦鸡蛋三明治",
+    "category": "breakfast",
+    "description": "通勤可带走。",
+    "ingredients": [
+      {
+        "foodId": "whole_wheat_bun",
+        "grams": 80
+      },
+      {
+        "foodId": "egg",
+        "grams": 50
+      },
+      {
+        "foodId": "lettuce",
+        "grams": 30
+      },
+      {
+        "foodId": "tomato",
+        "grams": 50
+      },
+      {
+        "foodId": "cheese",
+        "grams": 10
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 5,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 0.5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 10,
+    "costYuan": 10,
+    "difficulty": "easy",
+    "steps": [
+      "鸡蛋煎熟",
+      "全麦馒头切开，夹生菜番茄和蛋"
+    ],
+    "tasteTags": [
+      "咸",
+      "便携"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_microwave_egg",
+    "name": "微波蒸蛋",
+    "category": "breakfast",
+    "description": "没有灶也能做。",
+    "ingredients": [
+      {
+        "foodId": "egg",
+        "grams": 100
+      },
+      {
+        "foodId": "water",
+        "grams": 50
+      },
+      {
+        "foodId": "soy_sauce",
+        "grams": 5
+      },
+      {
+        "foodId": "sesame_paste",
+        "grams": 5
+      }
+    ],
+    "equipment": [
+      "microwave"
+    ],
+    "minutes": 8,
+    "costYuan": 5,
+    "difficulty": "easy",
+    "steps": [
+      "鸡蛋打散加温水",
+      "盖保鲜膜微波 2 分钟",
+      "淋酱油和芝麻酱"
+    ],
+    "tasteTags": [
+      "软",
+      "咸"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_tomato_egg",
+    "name": "番茄炒蛋",
+    "category": "lunch",
+    "description": "最稳的新手菜。",
+    "ingredients": [
+      {
+        "foodId": "tomato",
+        "grams": 150
+      },
+      {
+        "foodId": "egg",
+        "grams": 100
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "salt",
+        "grams": 1
+      },
+      {
+        "foodId": "cond_sugar",
+        "grams": 2,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 15,
+    "costYuan": 8,
+    "difficulty": "easy",
+    "steps": [
+      "鸡蛋炒凝固盛出",
+      "番茄炒软，倒回鸡蛋，调味"
+    ],
+    "tasteTags": [
+      "家常",
+      "咸"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_broccoli_shrimp",
+    "name": "西兰花炒虾仁",
+    "category": "lunch",
+    "description": "蛋白质和 VC 都高。",
+    "ingredients": [
+      {
+        "foodId": "broccoli",
+        "grams": 150
+      },
+      {
+        "foodId": "shrimp",
+        "grams": 100
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "salt",
+        "grams": 1
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 15,
+    "costYuan": 18,
+    "difficulty": "easy",
+    "steps": [
+      "西兰花焯水",
+      "虾仁炒变色，加西兰花翻炒"
+    ],
+    "tasteTags": [
+      "清淡",
+      "高蛋白"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_mapo_tofu",
+    "name": "麻婆豆腐",
+    "category": "dinner",
+    "description": "钠偏高，汤别喝。",
+    "ingredients": [
+      {
+        "foodId": "tofu",
+        "grams": 200
+      },
+      {
+        "foodId": "pork_lean",
+        "grams": 50
+      },
+      {
+        "foodId": "doubanjiang",
+        "grams": 10
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 5,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_sugar",
+        "grams": 2,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 0.5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 20,
+    "costYuan": 12,
+    "difficulty": "easy",
+    "steps": [
+      "豆腐切块焯水",
+      "肉末炒香，加豆瓣酱",
+      "下豆腐小火煮 5 分钟"
+    ],
+    "tasteTags": [
+      "辣",
+      "下饭"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_kung_pao",
+    "name": "宫保鸡丁",
+    "category": "dinner",
+    "description": "花生提供好脂肪，注意豆瓣酱钠。",
+    "ingredients": [
+      {
+        "foodId": "chicken_breast",
+        "grams": 120
+      },
+      {
+        "foodId": "peanuts",
+        "grams": 15
+      },
+      {
+        "foodId": "cucumber",
+        "grams": 50
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 10
+      },
+      {
+        "foodId": "doubanjiang",
+        "grams": 5
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 5,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_sugar",
+        "grams": 3,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_vinegar",
+        "grams": 5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 20,
+    "costYuan": 15,
+    "difficulty": "easy",
+    "steps": [
+      "鸡丁滑炒",
+      "加黄瓜和花生",
+      "豆瓣酱调味"
+    ],
+    "tasteTags": [
+      "辣",
+      "下饭"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_steamed_fish",
+    "name": "清蒸鳕鱼",
+    "category": "dinner",
+    "description": "低钠高蛋白，适合高血压。",
+    "ingredients": [
+      {
+        "foodId": "cod",
+        "grams": 150
+      },
+      {
+        "foodId": "soy_sauce",
+        "grams": 8
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 5
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 20,
+    "costYuan": 25,
+    "difficulty": "easy",
+    "steps": [
+      "鳕鱼蒸 8 分钟",
+      "淋酱油，浇热油"
+    ],
+    "tasteTags": [
+      "清淡",
+      "高蛋白"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_salmon_rice",
+    "name": "三文鱼糙米饭",
+    "category": "dinner",
+    "description": "Omega-3 和纤维组合。",
+    "ingredients": [
+      {
+        "foodId": "salmon",
+        "grams": 100
+      },
+      {
+        "foodId": "brown_rice",
+        "grams": 150
+      },
+      {
+        "foodId": "broccoli",
+        "grams": 100
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 1,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction",
+      "riceCooker"
+    ],
+    "minutes": 25,
+    "costYuan": 35,
+    "difficulty": "easy",
+    "steps": [
+      "糙米饭提前煮好",
+      "三文鱼煎或烤",
+      "西兰花焯水"
+    ],
+    "tasteTags": [
+      "清淡",
+      "高蛋白"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_chicken_salad",
+    "name": "鸡胸沙拉",
+    "category": "lunch",
+    "description": "外卖也能点，酱料另放。",
+    "ingredients": [
+      {
+        "foodId": "chicken_breast",
+        "grams": 100
+      },
+      {
+        "foodId": "lettuce",
+        "grams": 80
+      },
+      {
+        "foodId": "tomato",
+        "grams": 80
+      },
+      {
+        "foodId": "cucumber",
+        "grams": 50
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 5
+      },
+      {
+        "foodId": "cond_vinegar",
+        "grams": 8,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 0.8,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_honey",
+        "grams": 3,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 15,
+    "costYuan": 18,
+    "difficulty": "easy",
+    "steps": [
+      "鸡胸煎熟切片",
+      "蔬菜洗净",
+      "油醋汁拌匀"
+    ],
+    "tasteTags": [
+      "清淡",
+      "高蛋白"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_beef_noodles",
+    "name": "牛肉面",
+    "category": "dinner",
+    "description": "汤别全喝，钠主要在汤里。",
+    "ingredients": [
+      {
+        "foodId": "beef_lean",
+        "grams": 80
+      },
+      {
+        "foodId": "noodles_cooked",
+        "grams": 200
+      },
+      {
+        "foodId": "bok_choy",
+        "grams": 80
+      },
+      {
+        "foodId": "soy_sauce",
+        "grams": 5
+      },
+      {
+        "foodId": "cond_soy_dark",
+        "grams": 5,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 1.5,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 25,
+    "costYuan": 20,
+    "difficulty": "easy",
+    "steps": [
+      "牛肉焯水后炖 15 分钟",
+      "下面条和青菜",
+      "酱油调味"
+    ],
+    "tasteTags": [
+      "咸",
+      "热食"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_fried_rice",
+    "name": "蔬菜蛋炒饭",
+    "category": "lunch",
+    "description": "剩饭的好去处。",
+    "ingredients": [
+      {
+        "foodId": "rice_cooked",
+        "grams": 200
+      },
+      {
+        "foodId": "egg",
+        "grams": 50
+      },
+      {
+        "foodId": "carrot",
+        "grams": 30
+      },
+      {
+        "foodId": "snow_peas",
+        "grams": 30
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 1.2,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 15,
+    "costYuan": 10,
+    "difficulty": "easy",
+    "steps": [
+      "鸡蛋炒散",
+      "下米饭和蔬菜翻炒",
+      "少盐调味"
+    ],
+    "tasteTags": [
+      "家常",
+      "快手"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_congee_egg",
+    "name": "白粥配鸡蛋",
+    "category": "breakfast",
+    "description": "胃口差时用。",
+    "ingredients": [
+      {
+        "foodId": "congee",
+        "grams": 300
+      },
+      {
+        "foodId": "cabbage",
+        "grams": 30
+      },
+      {
+        "foodId": "egg",
+        "grams": 50
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 0.5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "riceCooker"
+    ],
+    "minutes": 10,
+    "costYuan": 5,
+    "difficulty": "easy",
+    "steps": [
+      "粥煮好",
+      "鸡蛋煮熟",
+      "配一小碟蔬菜"
+    ],
+    "tasteTags": [
+      "清淡",
+      "软"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_sweet_potato_milk",
+    "name": "红薯牛奶",
+    "category": "breakfast",
+    "description": "纤维和钙。",
+    "ingredients": [
+      {
+        "foodId": "sweet_potato",
+        "grams": 200
+      },
+      {
+        "foodId": "milk",
+        "grams": 200
+      }
+    ],
+    "equipment": [
+      "microwave"
+    ],
+    "minutes": 20,
+    "costYuan": 8,
+    "difficulty": "easy",
+    "steps": [
+      "红薯蒸/微波熟",
+      "配牛奶"
+    ],
+    "tasteTags": [
+      "甜",
+      "饱腹"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_yogurt_fruit",
+    "name": "酸奶水果燕麦杯",
+    "category": "snack",
+    "description": "免煮，适合办公室。",
+    "ingredients": [
+      {
+        "foodId": "yogurt",
+        "grams": 200
+      },
+      {
+        "foodId": "blueberry",
+        "grams": 50
+      },
+      {
+        "foodId": "strawberry",
+        "grams": 50
+      },
+      {
+        "foodId": "oats",
+        "grams": 20
+      },
+      {
+        "foodId": "cond_honey",
+        "grams": 5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [],
+    "minutes": 5,
+    "costYuan": 12,
+    "difficulty": "easy",
+    "steps": [
+      "酸奶铺底",
+      "加水果和燕麦"
+    ],
+    "tasteTags": [
+      "甜",
+      "免煮"
+    ],
+    "isTakeout": false,
+    "isNoCook": true,
+    "servings": 1
+  },
+  {
+    "id": "r_tofu_veg_soup",
+    "name": "豆腐蔬菜汤",
+    "category": "dinner",
+    "description": "补钙和碘。",
+    "ingredients": [
+      {
+        "foodId": "tofu",
+        "grams": 100
+      },
+      {
+        "foodId": "spinach",
+        "grams": 80
+      },
+      {
+        "foodId": "kelp",
+        "grams": 20
+      },
+      {
+        "foodId": "salt",
+        "grams": 1
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 3,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 15,
+    "costYuan": 8,
+    "difficulty": "easy",
+    "steps": [
+      "水开下豆腐和海带",
+      "最后放菠菜",
+      "少盐"
+    ],
+    "tasteTags": [
+      "清淡",
+      "汤"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_tomato_fish_soup",
+    "name": "番茄鱼汤",
+    "category": "dinner",
+    "description": "酸口开胃。",
+    "ingredients": [
+      {
+        "foodId": "cod",
+        "grams": 100
+      },
+      {
+        "foodId": "tomato",
+        "grams": 100
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 5
+      },
+      {
+        "foodId": "salt",
+        "grams": 1
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 20,
+    "costYuan": 20,
+    "difficulty": "easy",
+    "steps": [
+      "番茄炒出汁",
+      "加水煮开",
+      "下鱼片煮熟"
+    ],
+    "tasteTags": [
+      "酸",
+      "汤"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_mushroom_chicken",
+    "name": "香菇滑鸡",
+    "category": "dinner",
+    "description": "香菇提鲜，少放盐。",
+    "ingredients": [
+      {
+        "foodId": "chicken_thigh",
+        "grams": 120
+      },
+      {
+        "foodId": "shiitake",
+        "grams": 80
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "soy_sauce",
+        "grams": 5
+      },
+      {
+        "foodId": "cond_soy_dark",
+        "grams": 3,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_sugar",
+        "grams": 2,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 0.8,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 25,
+    "costYuan": 15,
+    "difficulty": "easy",
+    "steps": [
+      "鸡腿肉切块",
+      "香菇泡发",
+      "一起焖 15 分钟"
+    ],
+    "tasteTags": [
+      "咸",
+      "下饭"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_potato_beef",
+    "name": "土豆炖牛肉",
+    "category": "dinner",
+    "description": "周末备餐友好。",
+    "ingredients": [
+      {
+        "foodId": "beef_lean",
+        "grams": 100
+      },
+      {
+        "foodId": "potato",
+        "grams": 150
+      },
+      {
+        "foodId": "carrot",
+        "grams": 50
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 8,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_soy_dark",
+        "grams": 5,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 1,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_sugar",
+        "grams": 2,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 35,
+    "costYuan": 25,
+    "difficulty": "easy",
+    "steps": [
+      "牛肉焯水",
+      "和土豆胡萝卜一起炖 25 分钟"
+    ],
+    "tasteTags": [
+      "咸",
+      "饱腹"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_veg_stirfry",
+    "name": "清炒圆白菜",
+    "category": "lunch",
+    "description": "10 分钟补蔬菜。",
+    "ingredients": [
+      {
+        "foodId": "cabbage",
+        "grams": 150
+      },
+      {
+        "foodId": "green_pepper",
+        "grams": 50
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "salt",
+        "grams": 1
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 10,
+    "costYuan": 6,
+    "difficulty": "easy",
+    "steps": [
+      "蔬菜切好",
+      "大火快炒",
+      "少盐"
+    ],
+    "tasteTags": [
+      "清淡",
+      "快手"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_microwave_rice_veg",
+    "name": "微波炉米饭蔬菜",
+    "category": "lunch",
+    "description": "只有微波炉也能吃好。",
+    "ingredients": [
+      {
+        "foodId": "rice_cooked",
+        "grams": 150
+      },
+      {
+        "foodId": "broccoli",
+        "grams": 100
+      },
+      {
+        "foodId": "tofu",
+        "grams": 100
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 6,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 3,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "microwave"
+    ],
+    "minutes": 8,
+    "costYuan": 8,
+    "difficulty": "easy",
+    "steps": [
+      "全部放碗里",
+      "加少量水，微波 3 分钟",
+      "淋一点酱油"
+    ],
+    "tasteTags": [
+      "清淡",
+      "免灶"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_convenience_combo",
+    "name": "便利店组合",
+    "category": "lunch",
+    "description": "没有厨房时的最低限度。",
+    "ingredients": [
+      {
+        "foodId": "whole_wheat_bun",
+        "grams": 80
+      },
+      {
+        "foodId": "chicken_breast",
+        "grams": 100
+      },
+      {
+        "foodId": "milk",
+        "grams": 250
+      },
+      {
+        "foodId": "apple",
+        "grams": 100
+      }
+    ],
+    "equipment": [],
+    "minutes": 2,
+    "costYuan": 15,
+    "difficulty": "easy",
+    "steps": [
+      "买现成的",
+      "组合即可"
+    ],
+    "tasteTags": [
+      "免煮",
+      "便携"
+    ],
+    "isTakeout": false,
+    "isNoCook": true,
+    "servings": 1
+  },
+  {
+    "id": "r_takeout_malatang",
+    "name": "麻辣烫（外卖）",
+    "category": "dinner",
+    "description": "外卖场景，钠按高值估算。",
+    "ingredients": [
+      {
+        "foodId": "malatang",
+        "grams": 500
+      }
+    ],
+    "equipment": [],
+    "minutes": 0,
+    "costYuan": 25,
+    "difficulty": "easy",
+    "steps": [
+      "选清汤/少辣",
+      "多加蔬菜和豆制品",
+      "汤别喝"
+    ],
+    "tasteTags": [
+      "辣",
+      "外卖"
+    ],
+    "isTakeout": true,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_takeout_beef_noodles",
+    "name": "红烧牛肉面（外卖）",
+    "category": "dinner",
+    "description": "外卖场景。",
+    "ingredients": [
+      {
+        "foodId": "braised_beef_noodles",
+        "grams": 500
+      }
+    ],
+    "equipment": [],
+    "minutes": 0,
+    "costYuan": 25,
+    "difficulty": "easy",
+    "steps": [
+      "选小份",
+      "加一份青菜",
+      "汤喝一半以内"
+    ],
+    "tasteTags": [
+      "咸",
+      "外卖"
+    ],
+    "isTakeout": true,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_milk_tea_snack",
+    "name": "奶茶 + 巧克力",
+    "category": "snack",
+    "description": "偶尔可以，别当日常。",
+    "ingredients": [
+      {
+        "foodId": "milk_tea",
+        "grams": 500
+      },
+      {
+        "foodId": "chocolate",
+        "grams": 20
+      }
+    ],
+    "equipment": [],
+    "minutes": 0,
+    "costYuan": 18,
+    "difficulty": "easy",
+    "steps": [
+      "三分糖或不加糖"
+    ],
+    "tasteTags": [
+      "甜",
+      "外卖"
+    ],
+    "isTakeout": true,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_night_snack",
+    "name": "酸奶坚果香蕉",
+    "category": "snack",
+    "description": "加班后的稳选择。",
+    "ingredients": [
+      {
+        "foodId": "yogurt",
+        "grams": 150
+      },
+      {
+        "foodId": "walnuts",
+        "grams": 10
+      },
+      {
+        "foodId": "banana",
+        "grams": 100
+      }
+    ],
+    "equipment": [],
+    "minutes": 2,
+    "costYuan": 8,
+    "difficulty": "easy",
+    "steps": [
+      "组合即可"
+    ],
+    "tasteTags": [
+      "甜",
+      "免煮"
+    ],
+    "isTakeout": false,
+    "isNoCook": true,
+    "servings": 1
+  },
+  {
+    "id": "r_spinach_egg_soup",
+    "name": "菠菜蛋花汤",
+    "category": "dinner",
+    "description": "补铁和叶酸。",
+    "ingredients": [
+      {
+        "foodId": "spinach",
+        "grams": 100
+      },
+      {
+        "foodId": "egg",
+        "grams": 50
+      },
+      {
+        "foodId": "salt",
+        "grams": 1
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 3,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 10,
+    "costYuan": 6,
+    "difficulty": "easy",
+    "steps": [
+      "水开下菠菜",
+      "淋蛋液",
+      "少盐"
+    ],
+    "tasteTags": [
+      "清淡",
+      "汤"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_shrimp_fried_rice",
+    "name": "虾仁炒饭",
+    "category": "lunch",
+    "description": "高蛋白炒饭。",
+    "ingredients": [
+      {
+        "foodId": "rice_cooked",
+        "grams": 200
+      },
+      {
+        "foodId": "shrimp",
+        "grams": 80
+      },
+      {
+        "foodId": "egg",
+        "grams": 50
+      },
+      {
+        "foodId": "snow_peas",
+        "grams": 30
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 8
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 1.2,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 18,
+    "costYuan": 20,
+    "difficulty": "easy",
+    "steps": [
+      "虾仁炒熟",
+      "下米饭和蛋",
+      "加荷兰豆"
+    ],
+    "tasteTags": [
+      "咸",
+      "快手"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_soy_stew",
+    "name": "番茄黄豆炖土豆",
+    "category": "dinner",
+    "description": "素食蛋白组合。",
+    "ingredients": [
+      {
+        "foodId": "soybeans",
+        "grams": 50
+      },
+      {
+        "foodId": "tomato",
+        "grams": 100
+      },
+      {
+        "foodId": "potato",
+        "grams": 100
+      },
+      {
+        "foodId": "cooking_oil",
+        "grams": 5
+      },
+      {
+        "foodId": "cond_soy_light",
+        "grams": 8,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 1,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 30,
+    "costYuan": 10,
+    "difficulty": "easy",
+    "steps": [
+      "黄豆提前泡",
+      "番茄炒出汁",
+      "加土豆和黄豆炖 20 分钟"
+    ],
+    "tasteTags": [
+      "酸",
+      "素食"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  },
+  {
+    "id": "r_cold_noodles",
+    "name": "麻酱凉面",
+    "category": "lunch",
+    "description": "夏天适用，芝麻酱补钙。",
+    "ingredients": [
+      {
+        "foodId": "noodles_cooked",
+        "grams": 200
+      },
+      {
+        "foodId": "cucumber",
+        "grams": 80
+      },
+      {
+        "foodId": "egg",
+        "grams": 50
+      },
+      {
+        "foodId": "sesame_paste",
+        "grams": 10
+      },
+      {
+        "foodId": "soy_sauce",
+        "grams": 5
+      },
+      {
+        "foodId": "cond_vinegar",
+        "grams": 8,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_sugar",
+        "grams": 3,
+        "note": "调味·估算"
+      },
+      {
+        "foodId": "cond_salt_iodized",
+        "grams": 0.5,
+        "note": "调味·估算"
+      }
+    ],
+    "equipment": [
+      "induction"
+    ],
+    "minutes": 10,
+    "costYuan": 10,
+    "difficulty": "easy",
+    "steps": [
+      "面条过凉水",
+      "黄瓜切丝",
+      "芝麻酱加酱油调开"
+    ],
+    "tasteTags": [
+      "香",
+      "快手"
+    ],
+    "isTakeout": false,
+    "isNoCook": false,
+    "servings": 1
+  }
+]

@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  analyze-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.3'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - name: 公开数据门禁
+        run: |
+          if git ls-files | grep -qE 'cn_food_full|merged_.*\.json|key\.properties'; then
+            echo "受版权/敏感文件被跟踪"; exit 1
+          fi
+
+  build-apk:
+    runs-on: ubuntu-latest
+    needs: analyze-test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.3'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build apk --release --split-per-abi
+      - name: 产物不得含全量数据
+        run: |
+          for apk in build/app/outputs/flutter-apk/*.apk; do
+            if unzip -l "$apk" | grep -q 'assets/private/cn_food_full'; then
+              echo "FAIL $apk"; exit 1
+            fi
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk-public
+          path: build/app/outputs/flutter-apk/*.apk
+          retention-days: 7

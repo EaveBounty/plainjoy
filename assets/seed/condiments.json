@@ -1,0 +1,601 @@
+[
+  {
+    "id": "cond_salt_iodized",
+    "name": "精盐（加碘）",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "GB26878-25mg/kg",
+    "nutrientsPer100g": {
+      "sodium_mg": 39300,
+      "iodine_ug": 2500
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 1,
+    "defaultServingLabel": "1 g",
+    "isVerified": false,
+    "aliases": [
+      "碘盐",
+      "加碘盐",
+      "食盐"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "iodized"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_salt_plain",
+    "name": "精盐（无碘）",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "sodium_mg": 39300
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 1,
+    "defaultServingLabel": "1 g",
+    "isVerified": false,
+    "aliases": [
+      "无碘盐",
+      "非碘盐"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "non_iodized"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_salt_low",
+    "name": "低钠盐",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "sodium_mg": 24000,
+      "potassium_mg": 13000,
+      "iodine_ug": 2000
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 1,
+    "defaultServingLabel": "1 g",
+    "isVerified": false,
+    "aliases": [
+      "代盐",
+      "低钠食盐"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "high_potassium",
+      "salt_substitute"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_soy_light",
+    "name": "生抽",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 44,
+      "protein_g": 6,
+      "sodium_mg": 6600,
+      "sugar_g": 5,
+      "water_ml": 70
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 12,
+    "defaultServingLabel": "1 瓷勺 ≈10 ml（≈12 g）",
+    "isVerified": false,
+    "aliases": [
+      "酱油",
+      "淡酱油"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "soy"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_soy_dark",
+    "name": "老抽",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 80,
+      "protein_g": 5,
+      "sodium_mg": 7000,
+      "sugar_g": 15,
+      "water_ml": 65
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 12,
+    "defaultServingLabel": "1 瓷勺 ≈10 ml（≈12 g）",
+    "isVerified": false,
+    "aliases": [
+      "红烧酱油"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "soy"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_oyster",
+    "name": "蚝油",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 196,
+      "protein_g": 4,
+      "carb_g": 25,
+      "sodium_mg": 4500,
+      "sugar_g": 20
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 10,
+    "defaultServingLabel": "1 瓷勺 ≈10 g",
+    "isVerified": false,
+    "aliases": [
+      "蚝油汁"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_msg",
+    "name": "味精",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "sodium_mg": 12300
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 1,
+    "defaultServingLabel": "1 g",
+    "isVerified": false,
+    "aliases": [
+      "谷氨酸钠",
+      "味素"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "umami"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_chicken_essence",
+    "name": "鸡精",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 160,
+      "protein_g": 10,
+      "carb_g": 20,
+      "sodium_mg": 20000,
+      "sugar_g": 10
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 1,
+    "defaultServingLabel": "1 g",
+    "isVerified": false,
+    "aliases": [
+      "鸡粉"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "umami"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_doubanjiang",
+    "name": "豆瓣酱",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 108,
+      "protein_g": 12,
+      "carb_g": 15,
+      "sodium_mg": 6500,
+      "fiber_g": 1
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 10,
+    "defaultServingLabel": "1 瓷勺 ≈10 g",
+    "isVerified": false,
+    "aliases": [
+      "郫县豆瓣"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "fermented"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_sweet_bean",
+    "name": "甜面酱",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 220,
+      "carb_g": 30,
+      "sodium_mg": 3000,
+      "sugar_g": 25
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 1,
+    "defaultServingLabel": "1 g",
+    "isVerified": false,
+    "aliases": [],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "fermented"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_ketchup",
+    "name": "番茄酱",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 188,
+      "carb_g": 25,
+      "sodium_mg": 1100,
+      "sugar_g": 22
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 1,
+    "defaultServingLabel": "1 g",
+    "isVerified": false,
+    "aliases": [
+      "茄汁"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "sugary"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_sesame",
+    "name": "芝麻酱",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 522,
+      "protein_g": 18,
+      "fat_g": 50,
+      "sodium_mg": 50,
+      "calcium_mg": 1170,
+      "sfa_g": 7
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 10,
+    "defaultServingLabel": "1 瓷勺 ≈10 g",
+    "isVerified": false,
+    "aliases": [
+      "麻酱"
+    ],
+    "tags": [
+      "condiment",
+      "calcium"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_wine",
+    "name": "料酒",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 84,
+      "sodium_mg": 1000,
+      "water_ml": 80,
+      "alcohol_g": 12
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 10,
+    "defaultServingLabel": "1 瓷勺 ≈10 ml",
+    "isVerified": false,
+    "aliases": [
+      "黄酒"
+    ],
+    "tags": [
+      "condiment",
+      "alcohol"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_vinegar",
+    "name": "陈醋",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "sodium_mg": 800,
+      "water_ml": 90
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 10,
+    "defaultServingLabel": "1 瓷勺 ≈10 ml",
+    "isVerified": false,
+    "aliases": [
+      "醋",
+      "香醋"
+    ],
+    "tags": [
+      "condiment"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_tofu_fermented",
+    "name": "腐乳",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 130,
+      "protein_g": 10,
+      "fat_g": 10,
+      "sodium_mg": 3000
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 10,
+    "defaultServingLabel": "1 块 ≈10 g",
+    "isVerified": false,
+    "aliases": [
+      "豆腐乳"
+    ],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "fermented",
+      "soy"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_pickled_mustard",
+    "name": "榨菜",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 20,
+      "carb_g": 5,
+      "sodium_mg": 4200,
+      "fiber_g": 2
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 30,
+    "defaultServingLabel": "一小碟 ≈30 g",
+    "isVerified": false,
+    "aliases": [],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "pickled"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_salted_egg",
+    "name": "咸鸭蛋",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 165,
+      "protein_g": 12,
+      "fat_g": 13,
+      "sodium_mg": 2700
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 60,
+    "defaultServingLabel": "1 个 ≈60 g",
+    "isVerified": false,
+    "aliases": [],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "egg"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_hotpot",
+    "name": "火锅底料",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 490,
+      "fat_g": 50,
+      "carb_g": 10,
+      "sodium_mg": 5000,
+      "sfa_g": 25
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 20,
+    "defaultServingLabel": "1 小块 ≈20 g",
+    "isVerified": false,
+    "aliases": [],
+    "tags": [
+      "condiment",
+      "high_sodium",
+      "high_fat"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_mayo",
+    "name": "沙拉酱",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 490,
+      "fat_g": 50,
+      "sodium_mg": 600,
+      "sugar_g": 10,
+      "sfa_g": 8
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 15,
+    "defaultServingLabel": "1 瓷勺 ≈15 g",
+    "isVerified": false,
+    "aliases": [],
+    "tags": [
+      "condiment",
+      "high_fat"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_sugar",
+    "name": "白砂糖",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 400,
+      "carb_g": 99.9,
+      "sugar_g": 99.9
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 5,
+    "defaultServingLabel": "1 小勺 ≈5 g",
+    "isVerified": false,
+    "aliases": [
+      "糖",
+      "白糖"
+    ],
+    "tags": [
+      "condiment",
+      "sugary"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_honey",
+    "name": "蜂蜜",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 321,
+      "carb_g": 75,
+      "sugar_g": 75
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 10,
+    "defaultServingLabel": "1 小勺 ≈10 g",
+    "isVerified": false,
+    "aliases": [],
+    "tags": [
+      "condiment",
+      "sugary"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  },
+  {
+    "id": "cond_starch",
+    "name": "玉米淀粉",
+    "category": "condiment",
+    "source": "label_ref",
+    "sourceRef": "label-approx",
+    "nutrientsPer100g": {
+      "energy_kcal": 345,
+      "carb_g": 85
+    },
+    "groupsPer100g": {},
+    "defaultServingGrams": 5,
+    "defaultServingLabel": "1 小勺 ≈5 g",
+    "isVerified": false,
+    "aliases": [
+      "生粉",
+      "淀粉"
+    ],
+    "tags": [
+      "condiment"
+    ],
+    "isComposite": false,
+    "createdAt": 1761600000000,
+    "updatedAt": 1761600000000
+  }
+]

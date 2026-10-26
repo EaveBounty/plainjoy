@@ -1,0 +1,63 @@
+{
+  "source": "cfct6-general",
+  "count": 1677,
+  "fields": {
+    "calcium_mg": 1610,
+    "carb_g": 1655,
+    "carotene_ug": 902,
+    "cholesterol_mg": 1499,
+    "copper_mg": 1445,
+    "energy_kcal": 1662,
+    "fat_g": 1650,
+    "fiber_g": 1380,
+    "iron_mg": 1610,
+    "magnesium_mg": 1518,
+    "manganese_mg": 1451,
+    "niacin_mg": 1268,
+    "phosphorus_mg": 1597,
+    "potassium_mg": 1545,
+    "protein_g": 1657,
+    "retinol_ug": 1431,
+    "selenium_ug": 1262,
+    "sfa_g": 1650,
+    "sodium_mg": 1556,
+    "sugar_g": 1655,
+    "tfa_g": 1650,
+    "upf_pct": 1677,
+    "va_ug": 1226,
+    "vb1_mg": 1495,
+    "vb2_mg": 1504,
+    "vc_mg": 1258,
+    "ve_mg": 1226,
+    "water_ml": 1621,
+    "zinc_mg": 1558
+  },
+  "categories": {
+    "bean": 81,
+    "dairy": 240,
+    "egg": 30,
+    "fish": 249,
+    "fruit": 182,
+    "meat": 267,
+    "nut": 64,
+    "oil": 26,
+    "other": 21,
+    "staple": 138,
+    "vegetable": 379
+  },
+  "estimatedFields": [
+    "sugar_g",
+    "sfa_g",
+    "tfa_g",
+    "upf_pct"
+  ],
+  "unknownFields": [
+    "iodine_ug",
+    "vd_ug",
+    "vb12_ug",
+    "folate_ug",
+    "purine_mg"
+  ],
+  "generatedAt": "local",
+  "licenseNote": "数据仅本地使用；不随公开仓库分发。"
+}

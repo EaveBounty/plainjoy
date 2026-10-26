@@ -1,0 +1,79 @@
+[
+ {
+  "id": "ref_palm",
+  "name": "手掌",
+  "category": "hand",
+  "lengthMm": 100,
+  "widthMm": 80,
+  "heightMm": 20,
+  "weightG": 0,
+  "builtin": true,
+  "hint": "一掌心肉/鱼约 75–100 g"
+ },
+ {
+  "id": "ref_fist",
+  "name": "拳头",
+  "category": "hand",
+  "lengthMm": 90,
+  "widthMm": 80,
+  "heightMm": 90,
+  "weightG": 0,
+  "builtin": true,
+  "hint": "一拳蔬菜约 100–150 g，一拳米饭约 150 g"
+ },
+ {
+  "id": "ref_thumb",
+  "name": "拇指",
+  "category": "hand",
+  "lengthMm": 50,
+  "widthMm": 25,
+  "heightMm": 25,
+  "weightG": 0,
+  "builtin": true,
+  "hint": "一拇指油脂约 10 g"
+ },
+ {
+  "id": "ref_cards",
+  "name": "扑克牌",
+  "category": "object",
+  "lengthMm": 88,
+  "widthMm": 63,
+  "heightMm": 2,
+  "weightG": 0,
+  "builtin": true,
+  "hint": "一副扑克牌大小的肉约 75 g"
+ },
+ {
+  "id": "ref_phone",
+  "name": "手机",
+  "category": "object",
+  "lengthMm": 150,
+  "widthMm": 72,
+  "heightMm": 8,
+  "weightG": 180,
+  "builtin": true,
+  "hint": "手机大小的薄片食物约 100 g"
+ },
+ {
+  "id": "ref_coin",
+  "name": "一元硬币",
+  "category": "object",
+  "lengthMm": 25,
+  "widthMm": 25,
+  "heightMm": 2,
+  "weightG": 6,
+  "builtin": true,
+  "hint": "硬币大小的一勺酱约 5 g"
+ },
+ {
+  "id": "ref_bowl",
+  "name": "一次性饭碗",
+  "category": "object",
+  "lengthMm": 110,
+  "widthMm": 110,
+  "heightMm": 55,
+  "weightG": 5,
+  "builtin": true,
+  "hint": "装满约 250 ml"
+ }
+]

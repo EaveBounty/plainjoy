@@ -1,0 +1,68 @@
+[
+ {
+  "id": "c_bowl_small",
+  "name": "小饭碗",
+  "capacityMl": 250,
+  "tareG": 120,
+  "fillRatio": 0.8,
+  "shape": "bowl",
+  "densityHint": 0.85,
+  "builtin": true,
+  "updatedAt": 1760000000000
+ },
+ {
+  "id": "c_bowl_large",
+  "name": "大汤碗",
+  "capacityMl": 600,
+  "tareG": 250,
+  "fillRatio": 0.75,
+  "shape": "bowl",
+  "densityHint": 0.75,
+  "builtin": true,
+  "updatedAt": 1760000000000
+ },
+ {
+  "id": "c_cup",
+  "name": "马克杯",
+  "capacityMl": 350,
+  "tareG": 180,
+  "fillRatio": 0.85,
+  "shape": "cup",
+  "densityHint": 1.0,
+  "builtin": true,
+  "updatedAt": 1760000000000
+ },
+ {
+  "id": "c_takeout",
+  "name": "外卖盒",
+  "capacityMl": 750,
+  "tareG": 30,
+  "fillRatio": 0.7,
+  "shape": "box",
+  "densityHint": 0.7,
+  "builtin": true,
+  "updatedAt": 1760000000000
+ },
+ {
+  "id": "c_spoon",
+  "name": "汤勺",
+  "capacityMl": 15,
+  "tareG": 20,
+  "fillRatio": 0.9,
+  "shape": "spoon",
+  "densityHint": 1.0,
+  "builtin": true,
+  "updatedAt": 1760000000000
+ },
+ {
+  "id": "c_plate",
+  "name": "圆盘",
+  "capacityMl": 500,
+  "tareG": 300,
+  "fillRatio": 0.4,
+  "shape": "plate",
+  "densityHint": 0.6,
+  "builtin": true,
+  "updatedAt": 1760000000000
+ }
+]

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- 默认禁止明文 HTTP；AI 网关必须是 https。
+         局域网自建推理（Ollama/LM Studio）默认也不放行，避免误把健康数据发到明文地址。 -->
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>
