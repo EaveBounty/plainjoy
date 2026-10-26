@@ -1,0 +1,59 @@
+repo: EaveBounty/plainjoy
+primary_token: plainjoy
+keywords:
+  primary: [plainjoy, 清欢, nutrition companion]
+  english: [nutrition tracker, diet tracker, meal planner, ckd diet, gout diet, local-first]
+  chinese: [营养记录, 饮食记录, 不称重, 补丁餐, 痛风饮食, 肾病饮食]
+  tech: [flutter, dart, sembast, deepseek, byok]
+intents:
+  - id: no-weigh
+    label: 不称重记录
+    weight: 3
+    queries:
+      - 不用称重怎么记录饮食
+      - 不称重怎么估算食物重量
+  - id: hypertension
+    label: 高血压饮食
+    weight: 3
+    queries:
+      - 高血压饮食记录app
+  - id: ckd
+    label: 肾病饮食
+    weight: 3
+    queries:
+      - 肾病饮食记录app
+  - id: gout
+    label: 痛风饮食
+    weight: 2
+    queries:
+      - 痛风饮食记录app
+      - 高尿酸吃什么
+  - id: pregnancy
+    label: 孕期营养
+    weight: 2
+    queries:
+      - 孕期营养记录app
+      - 怀孕饮食记录
+  - id: local-first
+    label: 本地优先
+    weight: 3
+    queries:
+      - 本地优先饮食记录app
+      - 不上传健康数据的饮食app
+  - id: vision
+    label: 拍照识别
+    weight: 2
+    queries:
+      - 拍照识别食物营养成分
+      - DeepSeek 饮食记录
+queries:
+  - plainjoy
+  - 清欢 营养记录
+guardrails:
+  max_topics: 20
+  max_changes_per_cycle: 3
+  min_interval_days: 14
+  max_lifetime_writes: 4
+  max_primary_keywords: 3
+  max_queries: 10
+history: []

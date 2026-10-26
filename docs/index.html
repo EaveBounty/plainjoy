@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>清欢 Plainjoy：不称重的营养记录与下一餐规划</title>
+<meta name="description" content="清欢 Plainjoy 是本地优先的 Android 营养记录 app：不称重，用容器与参照物估份量，按高血压、糖尿病、痛风、肾病、孕期等病况改目标，只补下一餐。">
+<meta name="author" content="长沙市果垂素宇工程设计有限公司">
+<meta name="theme-color" content="#fbf7ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://eavebounty.github.io/plainjoy/">
+<link rel="alternate" hreflang="zh-CN" href="https://eavebounty.github.io/plainjoy/">
+<link rel="alternate" hreflang="en" href="https://eavebounty.github.io/plainjoy/en/">
+<link rel="alternate" hreflang="x-default" href="https://eavebounty.github.io/plainjoy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="清欢 Plainjoy">
+<meta property="og:title" content="清欢 Plainjoy：不称重的营养记录与下一餐规划">
+<meta property="og:description" content="本地优先的 Android 营养记录：不称重、按病况改目标、只补下一餐 1–5 餐。版本 0.2.0。">
+<meta property="og:url" content="https://eavebounty.github.io/plainjoy/">
+<meta property="og:image" content="https://eavebounty.github.io/plainjoy/assets/shots/splash.webp">
+<meta property="og:image:width" content="780">
+<meta property="og:image:height" content="1688">
+<meta property="og:image:alt" content="清欢 Plainjoy 开屏：30 度等腰三角形内，清欢二字沿斜线排列">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://eavebounty.github.io/plainjoy/#app",
+      "name": "清欢 Plainjoy 营养记录",
+      "alternateName": "Plainjoy",
+      "applicationCategory": "HealthApplication",
+      "applicationSubCategory": "Nutrition tracking",
+      "operatingSystem": "Android（附带 Web / Linux / Windows 产物）",
+      "softwareVersion": "0.2.0",
+      "datePublished": "2026-10-27",
+      "inLanguage": "zh-CN",
+      "description": "本地优先的营养记录与下一餐规划 app：不要求称重，按病况改目标，只补下一餐 1–5 餐。",
+      "license": "https://github.com/EaveBounty/plainjoy/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY", "description": "个人、研究与非营利使用免费；商业使用需书面授权" },
+      "author": { "@type": "Organization", "name": "长沙市果垂素宇工程设计有限公司" },
+      "publisher": { "@type": "Organization", "name": "长沙市果垂素宇工程设计有限公司" },
+      "codeRepository": "https://github.com/EaveBounty/plainjoy"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://eavebounty.github.io/plainjoy/#site",
+      "name": "清欢 Plainjoy",
+      "url": "https://eavebounty.github.io/plainjoy/",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://eavebounty.github.io/plainjoy/#org",
+      "name": "长沙市果垂素宇工程设计有限公司",
+      "url": "https://github.com/EaveBounty/plainjoy"
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#fbf7ef; --paper-2:#f4ecdf; --paper-3:#efe4d3;
+  --ink:#221f1a; --ink-2:#5b5347; --ink-3:#6b6354;
+  --line:#e3d8c6; --line-2:#d3c4ac;
+  --accent:#6e56cf; --accent-ink:#4b34a8; --accent-wash:#efe9ff;
+  --good:#2f6b4f; --warn:#8a4a1f;
+  --serif:"Noto Serif CJK SC","Source Han Serif SC","Songti SC",Songti,SimSun,"Times New Roman",Georgia,serif;
+  --sans:"Noto Sans CJK SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --max:1080px;
+  --shadow:0 1px 2px rgba(34,31,26,.05),0 18px 40px -24px rgba(34,31,26,.35);
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#14120f; --paper-2:#1c1916; --paper-3:#241f1a;
+    --ink:#ede6d9; --ink-2:#b3a897; --ink-3:#8b8073;
+    --line:#332d26; --line-2:#463d33;
+    --accent:#b3a1ff; --accent-ink:#cabaff; --accent-wash:#241f3a;
+    --good:#8ad0a9; --warn:#e0a173;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 20px 44px -28px rgba(0,0,0,.9);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16.5px; line-height:1.72;
+  font-feature-settings:"palt" 1; text-rendering:optimizeLegibility;
+}
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+}
+.wrap{width:100%; max-width:var(--max); margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+a{color:var(--accent-ink); text-decoration:underline; text-decoration-thickness:.06em; text-underline-offset:.22em}
+a:hover{text-decoration-thickness:.12em}
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:3px}
+.skip{position:absolute; left:-9999px; top:0; z-index:99; background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:0 0 8px 0; text-decoration:none}
+.skip:focus{left:0}
+.site-head{border-bottom:1px solid var(--line); background:color-mix(in srgb, var(--paper) 88%, transparent)}
+.head-in{display:flex; align-items:center; gap:18px; flex-wrap:wrap; padding-block:14px}
+.brand{display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-family:var(--serif); font-weight:700; letter-spacing:.06em; font-size:17px}
+.brand svg{width:26px; height:26px; color:var(--accent)}
+.brand em{font-style:normal; font-family:var(--sans); font-size:11.5px; letter-spacing:.18em; color:var(--ink-3); text-transform:uppercase; margin-left:8px; font-weight:500}
+.site-head nav{margin-left:auto}
+.site-head ul{display:flex; gap:clamp(10px,1.6vw,22px); list-style:none; margin:0; padding:0; flex-wrap:wrap}
+.site-head nav a{color:var(--ink-2); text-decoration:none; font-size:13.5px; padding:4px 0; border-bottom:1px solid transparent}
+.site-head nav a:hover{border-bottom-color:var(--line-2); color:var(--ink)}
+.lang{font-size:13px; border:1px solid var(--line-2); border-radius:999px; padding:4px 12px; text-decoration:none; color:var(--ink-2); white-space:nowrap}
+.lang:hover{background:var(--paper-2); color:var(--ink)}
+main{display:block}
+section{padding-block:clamp(40px,6vw,72px); border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h1,h2,h3{font-family:var(--serif); line-height:1.28; letter-spacing:.01em; text-wrap:balance}
+h1{font-size:clamp(30px,4.6vw,50px); margin:0 0 18px; font-weight:800}
+h1 span{display:block; font-size:clamp(15px,1.9vw,19px); font-weight:600; letter-spacing:.06em; color:var(--ink-2); margin-top:14px; font-family:var(--sans)}
+h2{font-size:clamp(22px,2.7vw,30px); margin:0 0 10px; font-weight:700}
+h3{font-size:17.5px; margin:0 0 6px; font-weight:700}
+.sec-head{max-width:66ch; margin-bottom:clamp(20px,3vw,34px)}
+.sec-head .num{display:inline-block; font-family:var(--mono); font-size:12px; letter-spacing:.2em; color:var(--accent); margin-bottom:10px}
+.sec-head p{margin:8px 0 0; color:var(--ink-2); font-size:15.5px}
+p{margin:0 0 1em}
+.hero{padding-block:clamp(34px,5vw,66px); background:
+  radial-gradient(120% 90% at 82% 0%, var(--accent-wash) 0%, transparent 58%),
+  radial-gradient(80% 60% at 0% 100%, var(--paper-2) 0%, transparent 60%)}
+.hero-grid{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.62fr); gap:clamp(24px,4vw,54px); align-items:start}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0 0 16px}
+.lede{font-size:clamp(16px,1.5vw,18.5px); color:var(--ink); max-width:60ch}
+.lede b{font-weight:700}
+.defs{margin:22px 0 26px; padding:0; display:grid; gap:0; border-top:1px solid var(--line)}
+.defs>div{display:grid; grid-template-columns:5.6em minmax(0,1fr); gap:14px; padding:12px 0; border-bottom:1px solid var(--line)}
+.defs dt{font-family:var(--serif); font-weight:700; font-size:14px; color:var(--accent-ink); padding-top:2px}
+.defs dd{margin:0; font-size:15px; color:var(--ink-2)}
+.cta{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:26px 0 12px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px; font-size:15px; font-weight:600; text-decoration:none; border:1px solid var(--line-2); color:var(--ink); background:var(--paper)}
+.btn:hover{background:var(--paper-2); transform:translateY(-1px)}
+.btn-primary{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.btn-primary:hover{background:var(--accent-ink); border-color:var(--accent-ink); color:#fff}
+.btn-note{font-size:13px; color:var(--ink-3); margin:0}
+.stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-top:clamp(28px,4vw,44px)}
+@media (max-width:700px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--paper); padding:16px 16px 14px}
+.stat b{display:block; font-family:var(--serif); font-size:clamp(21px,2.4vw,27px); font-variant-numeric:tabular-nums; letter-spacing:-.01em; color:var(--ink)}
+.stat span{display:block; font-size:12.5px; line-height:1.5; color:var(--ink-3); margin-top:4px}
+.shot{margin:0; border:1px solid var(--line); border-radius:22px; overflow:hidden; background:var(--paper-2); box-shadow:var(--shadow)}
+.shot img{display:block; width:100%; height:auto}
+.shot figcaption{font-size:12.5px; color:var(--ink-3); padding:10px 14px; border-top:1px solid var(--line); background:var(--paper)}
+.gallery{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,3vw,30px)}
+@media (max-width:700px){.gallery{grid-template-columns:1fr}}
+.cards{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(14px,2.2vw,24px)}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(18px,2.2vw,26px); box-shadow:var(--shadow)}
+.card .k{font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; color:var(--accent); display:block; margin-bottom:10px}
+.card p{font-size:14.5px; color:var(--ink-2); margin:0}
+.card p+p{margin-top:10px; padding-top:10px; border-top:1px dashed var(--line-2); font-size:13.5px; color:var(--ink-3)}
+.fit{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(14px,2.2vw,24px)}
+@media (max-width:760px){.fit{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line); border-radius:var(--radius); padding:clamp(18px,2.2vw,26px); background:var(--paper)}
+.panel h3{display:flex; align-items:center; gap:8px; font-size:16px; margin-bottom:12px}
+.panel ul{margin:0; padding:0; list-style:none}
+.panel li{position:relative; padding-left:1.35em; font-size:14.5px; color:var(--ink-2); margin-bottom:9px}
+.panel li::before{position:absolute; left:0; top:0; font-weight:700}
+.panel.yes li::before{content:"✓"; color:var(--good)}
+.panel.no li::before{content:"×"; color:var(--warn)}
+.panel.no{background:transparent}
+.tbl-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper)}
+table{width:100%; border-collapse:collapse; font-size:14.5px; min-width:620px}
+caption{caption-side:top; text-align:left; font-size:13px; color:var(--ink-3); padding:14px 16px 10px}
+th,td{text-align:left; vertical-align:top; padding:12px 16px; border-bottom:1px solid var(--line)}
+thead th{font-family:var(--serif); font-size:13.5px; letter-spacing:.02em; color:var(--ink); background:var(--paper-2); font-weight:700}
+tbody th{font-weight:700; font-size:14px; color:var(--ink); white-space:nowrap}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td{color:var(--ink-2)}
+.cmp td:nth-child(2){background:color-mix(in srgb, var(--accent-wash) 45%, transparent); color:var(--ink)}
+.facts td:nth-child(2){font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600}
+.nums td:nth-child(2){white-space:nowrap}
+.facts td:last-child{font-size:13px; color:var(--ink-3)}
+.tbl-note{font-size:12.5px; color:var(--ink-3); margin:10px 2px 0}
+.faq{display:grid; gap:0; border-top:1px solid var(--line); max-width:78ch}
+.faq-item{padding:22px 0; border-bottom:1px solid var(--line)}
+.faq-item h3{font-size:17px; margin:0 0 8px; color:var(--ink)}
+.faq-item h3::before{content:"问"; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--accent); border:1px solid var(--accent); border-radius:4px; padding:1px 4px; margin-right:9px; vertical-align:2px}
+.faq-item p{margin:0; font-size:15px; color:var(--ink-2)}
+.steps{margin:0; padding:0; list-style:none; counter-reset:s; display:grid; gap:16px; max-width:78ch}
+.steps>li{counter-increment:s; position:relative; padding-left:2.4em}
+.steps>li::before{content:counter(s); position:absolute; left:0; top:2px; width:1.55em; height:1.55em; display:grid; place-items:center; font-family:var(--mono); font-size:12px; border-radius:50%; background:var(--paper-3); color:var(--ink-2)}
+.steps h3{font-size:15.5px; margin:0 0 6px}
+.steps p{font-size:14.5px; color:var(--ink-2); margin:0 0 8px}
+pre{margin:0 0 6px; background:#1d1a16; color:#f0e9dc; padding:14px 16px; border-radius:10px; overflow-x:auto; font-family:var(--mono); font-size:13px; line-height:1.65; border:1px solid #2c2721}
+pre code{font-family:inherit; white-space:pre}
+code{font-family:var(--mono); font-size:.92em; background:var(--paper-2); padding:1px 5px; border-radius:4px}
+pre code{background:none; padding:0}
+blockquote{margin:0 0 26px; padding:16px 20px; border-left:3px solid var(--accent); background:var(--paper-2); border-radius:0 10px 10px 0; font-family:var(--serif); font-size:17px; color:var(--ink)}
+blockquote footer{font-family:var(--sans); font-size:12.5px; color:var(--ink-3); margin-top:6px}
+.callout{border:1px solid var(--line-2); border-left:4px solid var(--warn); background:var(--paper-2); border-radius:0 10px 10px 0; padding:16px 20px; margin:0 0 22px; font-size:14.5px; color:var(--ink-2)}
+.callout b{color:var(--ink)}
+.lic{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(14px,2.4vw,28px); align-items:start}
+@media (max-width:800px){.lic{grid-template-columns:1fr}}
+.lic dl{margin:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:8px 16px; font-size:14px}
+.lic dt{color:var(--ink-3); white-space:nowrap}
+.lic dd{margin:0; color:var(--ink); font-weight:600}
+footer.site{padding-block:34px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3)}
+footer.site .wrap{display:flex; gap:16px; flex-wrap:wrap; align-items:baseline; justify-content:space-between}
+footer.site a{color:var(--ink-2)}
+@media print{
+  :root{--paper:#fff; --paper-2:#fff; --paper-3:#fff; --ink:#000; --ink-2:#222; --ink-3:#444; --line:#bbb; --line-2:#999; --accent:#000; --accent-ink:#000; --accent-wash:#f2f2f2; --shadow:none}
+  body{font-size:11pt; line-height:1.5}
+  .site-head nav,.lang,.skip,.cta,.gallery,.shot,.stats{display:none !important}
+  section{padding-block:10pt; break-inside:avoid; border-bottom:1px solid #ccc}
+  .hero{background:none}
+  h1{font-size:22pt}
+  h2{font-size:14pt}
+  a{color:#000; text-decoration:underline}
+  a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8pt; color:#555; word-break:break-all}
+  table{min-width:0; font-size:9pt}
+  pre{background:#f4f4f4; color:#000; border:1px solid #ccc}
+  .card,.panel{break-inside:avoid; border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false"><path d="M16 3.5 29 27H3L16 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="19" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>清欢<em>Plainjoy</em></span>
+    </a>
+    <nav aria-label="页面导航">
+      <ul>
+        <li><a href="#what">它是什么</a></li>
+        <li><a href="#diff">三个差异</a></li>
+        <li><a href="#fit">适用性</a></li>
+        <li><a href="#compare">对比</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#build">快速开始</a></li>
+      </ul>
+    </nav>
+    <a class="lang" href="en/" hreflang="en" lang="en">English</a>
+  </div>
+</header>
+
+<main id="main">
+<article>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Android · 本地优先 · v0.2.0</p>
+      <h1>清欢 Plainjoy<span>不称重的中文营养记录与下一餐规划</span></h1>
+      <p class="lede">一句话：清欢是一个不要求你称重的营养记录 app。拍照或写一句话记下一餐，它按你的病况把每日目标改掉，然后只帮你安排下一餐的 1–5 个「补丁」。</p>
+
+      <dl class="defs">
+        <div>
+          <dt>这是什么</dt>
+          <dd>一个 Android 优先、数据存在手机里的营养记录与下一餐规划工具。记录 → 16 项评分 → 一条最值得做的建议 → 补丁餐。</dd>
+        </div>
+        <div>
+          <dt>给谁用</dt>
+          <dd>没耐心称重、常吃外卖与食堂、有高血压 / 糖尿病 / 痛风 / 慢性肾病 / 贫血 / 乳糖不耐 / 素食 / 孕期 / 哺乳期等具体约束的人。</dd>
+        </div>
+        <div>
+          <dt>替代什么</dt>
+          <dd>替代「先称克数再填表」的热量打卡流程，也替代「21 餐完美周计划」这类坚持不下去的方案；不替代医生、营养师与药物。</dd>
+        </div>
+      </dl>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/EaveBounty/plainjoy">查看源码</a>
+        <a class="btn" href="#build">自行构建</a>
+      </div>
+      <p class="btn-note">仓库没有 GitHub Release，不提供安装包下载；请克隆后按下方命令自行构建。</p>
+
+      <div class="stats">
+        <div class="stat"><b>±35–45%</b><span>10 秒档份量误差（来源：README §1）</span></div>
+        <div class="stat"><b>16 项</b><span>评分维度（来源：README §2.4）</span></div>
+        <div class="stat"><b>102 条</b><span>公开种子食物（来源：assets/seed/foods.json）</span></div>
+        <div class="stat"><b>22 条</b><span>调味品条目（来源：assets/seed/condiments.json）</span></div>
+      </div>
+    </div>
+
+    <figure class="shot">
+      <img src="assets/shots/splash.webp" width="780" height="1688" alt="清欢 Plainjoy 开屏：30 度等腰三角形内，清欢二字沿斜线排列，底部为苏轼词句" decoding="async">
+      <figcaption>开屏：30° 三角框 + 苏轼词句。水墨米白底，不用渐变玻璃。</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">01 / 前提</span>
+      <h2>它假设你做不到「精确」，然后照样给出结论</h2>
+      <p>主流饮食 app 的隐含前提是：你有厨房秤、愿意每天记 20 项、并且有一个明确的减脂目标。清欢的前提正好相反。</p>
+    </div>
+
+    <blockquote>
+      慢慢吃，吃到刚好。
+      <footer>—— 项目主张，不是疗效承诺</footer>
+    </blockquote>
+
+    <div class="tbl-wrap">
+      <table class="facts">
+        <caption>现实约束与设计回应（来源：README §1）</caption>
+        <thead>
+          <tr><th scope="col">现实</th><th scope="col">清欢的回应</th><th scope="col">出处</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">不知道一碗饭多少克</th><td>容器标定 + 参照物 + 目测区间，10 秒档误差 ±35–45%</td><td>README §1、docs/research/03</td></tr>
+          <tr><th scope="row">一餐估错就想放弃</th><td>单餐误差不影响结论，看 7 天结构；区间优先，不假装精确</td><td>README §1</td></tr>
+          <tr><th scope="row">有高血压 / 肾病 / 痛风 / 孕期</th><td>病况直接改目标、改评分权重、改建议，不是贴通用文案</td><td>docs/PERSONALIZATION.md §2</td></tr>
+          <tr><th scope="row">外卖与食堂无法拆解</th><td>先记整份，再用「调味品单独成条」捕捉隐形钠</td><td>README §1、§2.3</td></tr>
+          <tr><th scope="row">计划太复杂坚持不了</th><td>只补下一餐 1–5 餐，保留你原本的吃法</td><td>README §1</td></tr>
+          <tr><th scope="row">记录很枯燥</th><td>四轴宠物（活力 / 皮毛 / 心情 / 水分）+ 周报，不做死亡与惩罚</td><td>README §2.5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="diff">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">02 / 核心差异</span>
+      <h2>三个差异，其它都是细节</h2>
+      <p>如果只看三件事：怎么估份量、目标从哪来、计划给到多细。</p>
+    </div>
+
+    <ol class="cards">
+      <li class="card">
+        <span class="k">差异一 · 份量</span>
+        <h3>不称重，但把误差写在脸上</h3>
+        <p>三档精度：10 秒（容器 + 参照物，误差 ±35–45%）、60 秒（换容器与剩饭扣除）、3 分钟（拆解混合菜）。每条记录保存营养快照，之后换库也不会篡改历史。</p>
+        <p>出处：README §2.1；误差区间来自文献与常见容器，尚未完成 50–100 次真实称重校准（README §6 已知限制）。</p>
+      </li>
+      <li class="card">
+        <span class="k">差异二 · 目标</span>
+        <h3>按病况改目标，而不是贴一段科普</h3>
+        <p>10 类病况直接改写每日目标、评分权重与建议。高血压钠上限 2000 mg、钠权重 ×1.8；慢性肾病蛋白 0.8 g/kg（透析 1.1 g/kg）、钾上限 2500 mg。多病况叠加时上限取更严、下限取更高，冲突时保上限并写明原因。</p>
+        <p>出处：docs/PERSONALIZATION.md §2–§3。所有数字都是饮食目标，不是处方。</p>
+      </li>
+      <li class="card">
+        <span class="k">差异三 · 计划</span>
+        <h3>只补下一餐，1–5 餐</h3>
+        <p>缺口驱动，确定性求解，语言模型只负责把结果讲成人话——不负责决定吃什么。计划让你在原本的吃法上补一两样，而不是重排一整周。</p>
+        <p>出处：README §2.3、lib/core/plan/plan_engine.dart。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="shots">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">03 / 界面</span>
+      <h2>首启三屏讲清为什么、画风、精度</h2>
+      <p>下面两张是首次引导与首页，均为真实运行截图（390×844 视口录屏转 WebP）。</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot">
+        <img src="assets/shots/onboarding.webp" width="780" height="1688" alt="清欢首次引导页：千金要方引文与四条高密度说明" loading="lazy" decoding="async">
+        <figcaption>首次引导：一屏读完的四条说明，讲清「为什么值得记」。</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/shots/home.webp" width="780" height="1688" alt="清欢首页：宠物小欢、今日评分与快速记录入口" loading="lazy" decoding="async">
+        <figcaption>首页：宠物状态 + 今日评分 + 快速记录入口，空状态也给出下一步。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="fit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">04 / 适用性</span>
+      <h2>它适合谁，以及它明确不做什么</h2>
+      <p>写清不适用场景，比写十条卖点更有用。</p>
+    </div>
+    <div class="fit">
+      <div class="panel yes">
+        <h3>适合</h3>
+        <ul>
+          <li>吃饭以中式家常菜、外卖、食堂为主，很难按克称量。</li>
+          <li>有明确饮食约束（高血压、糖尿病、痛风、慢性肾病、贫血、乳糖不耐、素食、孕期、哺乳期），需要目标随病况变化。</li>
+          <li>不想注册账号、不愿把饮食与健康数据放到云端。</li>
+          <li>能接受「区间」而不是「精确到 1 kcal」。</li>
+          <li>想被提醒改一件事，而不是被一张 21 餐表压住。</li>
+        </ul>
+      </div>
+      <div class="panel no">
+        <h3>不适合</h3>
+        <ul>
+          <li>需要处方、药物剂量、透析方案或临床营养会诊。</li>
+          <li>需要逐克精确的竞技备赛或术后严格管饲计算。</li>
+          <li>期望自动同步到云端、多设备实时协作的团队或家庭账号场景。</li>
+          <li>需要完整脂肪酸、嘌呤 mg 值、碘含量的实测库——公开种子库没有这些字段。</li>
+          <li>想直接下载安装包：仓库没有 Release，需要自行构建。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">05 / 对比</span>
+      <h2>清欢与热量打卡类 app 的四行区别</h2>
+      <p>只比较四个结构性问题。右列描述的是这类产品的常见设计假设，不针对任何具体产品。</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <caption>对比：清欢 vs 热量打卡类 app（常见做法）</caption>
+        <thead>
+          <tr><th scope="col">维度</th><th scope="col">清欢 Plainjoy</th><th scope="col">热量打卡类 app（常见做法）</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">是否称重</th><td>不要求。容器标定 + 参照物 + 目测区间，三档精度（10 秒 / 60 秒 / 3 分钟），并公开误差 ±35–45%。</td><td>通常默认你有厨房秤，按克录入才「准」，估错就等于记错。</td></tr>
+          <tr><th scope="row">是否按病况改目标</th><td>10 类病况直接改目标、评分权重与建议；多病况取更严上限并写明冲突。</td><td>多为通用热量目标，病况最多给一段科普文案。</td></tr>
+          <tr><th scope="row">是否本地优先</th><td>本地库存储，不注册、不上传；AI 需自填 key，请求只含当次输入与食物名，不含健康档案。</td><td>常见为账号 + 云同步，数据默认离开设备。</td></tr>
+          <tr><th scope="row">计划粒度</th><td>只补下一餐 1–5 餐「补丁餐」，保留你原本的吃法。</td><td>常见为整周餐单或每日总热量配额，一次给太多。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">右列是对同类产品常见设计假设的归纳，不是对某个产品的评测；具体产品请自行核对。</p>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">06 / 数字</span>
+      <h2>公开可核对的数字，以及它们各自的出处</h2>
+      <p>下面每个数字都能在仓库文件里找到，没有估算的「用户数」「好评率」。</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="facts nums">
+        <caption>关键数字与来源（2026-10-27 核对）</caption>
+        <thead>
+          <tr><th scope="col">项目</th><th scope="col">数值</th><th scope="col">出处</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">10 秒档份量误差</th><td>±35–45%</td><td>README §1</td></tr>
+          <tr><th scope="row">评分维度</th><td>16 项</td><td>README §2.4（食物组 6 / 营养素 7 / 限制项 3，CKD 另加钾、磷）</td></tr>
+          <tr><th scope="row">评分抽样</th><td>320 次</td><td>README §2.4，蒙特卡洛区间 p10–p90</td></tr>
+          <tr><th scope="row">公开种子食物</th><td>102 条</td><td>assets/seed/foods.json，独立近似估算</td></tr>
+          <tr><th scope="row">公开调味品</th><td>22 条</td><td>assets/seed/condiments.json，标签区间 + GB 26878</td></tr>
+          <tr><th scope="row">家常食谱</th><td>30 个</td><td>assets/seed/recipes.json，含钠账本</td></tr>
+          <tr><th scope="row">支持病况</th><td>10 类</td><td>docs/PERSONALIZATION.md §2</td></tr>
+          <tr><th scope="row">数据不足阈值</th><td>60%</td><td>docs/PERSONALIZATION.md §4，按能量加权覆盖率</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">公开仓库只有上述种子数据；可选的本地全量数据包（1677 条）不随仓库分发，需自行从合法来源准备，见下一节常见问题。</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">07 / 常见问题</span>
+      <h2>会被原样问出来的十五个问题</h2>
+      <p>答案只写仓库能支撑的部分；不确定的地方直接说不确定。</p>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>清欢是开源软件吗？</h3>
+        <p>不是。清欢采用 PolyForm Noncommercial License 1.0.0，这不是 OSI 认证的开源许可证。个人学习、研究与非营利使用免费；任何商业用途需要另行书面授权，见仓库 COMMERCIAL.md。</p>
+      </div>
+      <div class="faq-item">
+        <h3>不称重的话，误差到底有多大？</h3>
+        <p>10 秒档的份量误差区间是 ±35–45%（来源：README §1）。这个区间的意思不是「随便记都行」，而是单餐误差不会直接推翻结论：评分看的是 7 天结构，且以 p10–p90 区间呈现。误差目前来自文献与常见容器，还没有完成 50–100 次真实称重校准。</p>
+      </div>
+      <div class="faq-item">
+        <h3>支持哪些病况？会不会乱给建议？</h3>
+        <p>支持高血压、糖尿病、糖尿病前期、痛风 / 高尿酸、慢性肾病（含透析开关）、贫血、乳糖不耐、素食、孕期、哺乳期，共 10 类（来源：docs/PERSONALIZATION.md §2）。病况会改目标、改评分权重、改建议排序；多病况叠加时上限取更严、下限取更高，冲突时保留上限并写明。输出里没有诊断、药量与疾病风险百分比。</p>
+      </div>
+      <div class="faq-item">
+        <h3>必须联网或用 AI 才能记一餐吗？</h3>
+        <p>不必。文字一句话解析走本地规则，不填 API key 也能记录、评分和出补丁餐；搜索用本地种子库（102 条食物 + 22 条调味品）。只有照片识别需要你自己填 DeepSeek key 并显式开启，请求只包含当次输入与食物名，不含健康档案。</p>
+      </div>
+      <div class="faq-item">
+        <h3>我的饮食和健康数据会被上传吗？</h3>
+        <p>不会主动上传。数据存在设备的本地库里，不注册、不登录；Android 端 allowBackup=false，云备份与设备迁移都排除数据库；备份导出为 JSON 且不含 API key。已知限制：API key 目前明文保存在本地设置里，迁移到 Android Keystore 排在下一版。</p>
+      </div>
+      <div class="faq-item">
+        <h3>仓库里有没有全量成分表？</h3>
+        <p>没有。公开仓库只有 102 条独立近似估算、22 条调味品区间和 30 个食谱。1677 条的全量成分表是可选本地数据包，不随仓库分发，也不允许打进 APK / Web 产物上传到任何地方；需要你自己从合法来源准备并本地导入，详见 docs/DATA.md。</p>
+      </div>
+      <div class="faq-item">
+        <h3>怎么安装？有 APK 下载吗？</h3>
+        <p>没有下载按钮：仓库目前没有 GitHub Release，也没有分发安装包。请克隆源码后自行构建，命令见下一节；发布签名需要你自己的 keystore，仓库里的签名配置已被 gitignore。</p>
+      </div>
+      <div class="faq-item">
+        <h3>不用称重怎么记录饮食？</h3>
+        <p>用「容器 + 参照物 + 剩饭」代替秤：选你常用的碗/勺做一次标定，之后记「少/中/多」和剩了多少。10 秒一餐，份量以区间保存（±35–45%）；单餐误差不会直接推翻结论，评分看 7 天结构。</p>
+      </div>
+      <div class="faq-item">
+        <h3>不称重怎么估算食物重量？</h3>
+        <p>三个锚点：①容器标定（你的碗、勺、外卖盒）；②参照物（手掌、鸡蛋、银行卡、拳头）；③包装净含量。给区间而不是单点，比如「米饭 120–160 g」，比「150 g」更接近真实。</p>
+      </div>
+      <div class="faq-item">
+        <h3>高血压饮食记录 app 怎么选？</h3>
+        <p>看三件事：钠上限有没有写进目标（≤2000 mg，理想 1500）、生抽/老抽/蚝油/味精这些隐形钠能不能单独记、评分权重会不会按病况调整。清欢三项都做，并会把钠折算成盐克数。</p>
+      </div>
+      <div class="faq-item">
+        <h3>肾病饮食记录 app 要注意什么？</h3>
+        <p>蛋白要按体重与透析状态算（非透析常见 0.6–0.8 g/kg，透析 1.0–1.2 g/kg），钾/磷上限必须按化验单，低钠盐含钾要慎用。清欢提供透析开关与钾/磷上限，但只做记录辅助，目标要由肾内科确认。</p>
+      </div>
+      <div class="faq-item">
+        <h3>痛风饮食记录 app 能替代医生吗？高尿酸吃什么？</h3>
+        <p>不能替代医生。记录的价值是识别叠加：内脏、浓汤、啤酒、甜饮是否同时出现。高尿酸优先白水、低脂奶、蔬菜，蛋白来源换成蛋/奶/部分鱼禽；急性红肿热痛请就医，不要只靠饮食硬扛。</p>
+      </div>
+      <div class="faq-item">
+        <h3>孕期营养记录 app 需要记录哪些？怀孕饮食记录怎么开始？</h3>
+        <p>先记五件事：叶酸 600 μgDFE、铁 27 mg、钙 1000 mg、碘 230 μg、蛋白 +20 g。开始方式：正常记三餐 + 标明是否用加碘盐，再看缺口；补充剂剂量遵医嘱，app 不给药量。</p>
+      </div>
+      <div class="faq-item">
+        <h3>本地优先饮食记录app 有哪些？不上传健康数据的怎么选？</h3>
+        <p>清欢是其中一个：数据存在本地 Sembast，不注册、不登录；Android 自动备份关闭；AI 是可选项，只发送当次输入，不含健康档案。选其他工具时，至少核对隐私政策、备份行为和 AI 请求范围。</p>
+      </div>
+      <div class="faq-item">
+        <h3>拍照识别食物营养成分准吗？DeepSeek 饮食记录怎么配置？</h3>
+        <p>照片只负责识别菜名与份量区间，营养优先查本地成分表；本地没有这道菜时，才接受 AI 的每 100 g 估算，并标记为 ai_estimate。配置：设置里填 DeepSeek Base URL、模型名和 key，显式开启 AI；没有 key 时自动退回本地规则。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">08 / 快速开始</span>
+      <h2>从克隆到跑起来，四条命令</h2>
+      <p>环境：Flutter 3.44.3 / Dart 3.12.2（不要盲目升级，部分依赖要求 Dart 3.13）、Android SDK、JDK 17。</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>克隆并安装依赖</h3>
+        <pre><code>git clone https://github.com/EaveBounty/plainjoy.git
+cd plainjoy
+flutter pub get</code></pre>
+      </li>
+      <li>
+        <h3>在设备上运行</h3>
+        <pre><code>flutter run -d &lt;device&gt;</code></pre>
+        <p>无网络也能跑：种子库随仓库分发，缺全量数据包时自动退回 102 条，不报错。</p>
+      </li>
+      <li>
+        <h3>构建 Android 安装包</h3>
+        <pre><code>flutter build apk --release --split-per-abi
+# 产物：build/app/outputs/flutter-apk/app-*-release.apk</code></pre>
+        <p>发布签名读取 android/key.properties（已 gitignore）；签名文件与密码必须自行离线备份，丢失后无法覆盖升级。</p>
+      </li>
+      <li>
+        <h3>自检</h3>
+        <pre><code>flutter analyze   # 0 error
+flutter test      # 16/16</code></pre>
+        <p>改完代码先跑这两条，再谈截图与发布。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="license">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">09 / 许可与边界</span>
+      <h2>许可、作者与免责声明</h2>
+    </div>
+
+    <div class="callout">
+      <b>清欢不是医疗器械。</b>它不提供诊断、处方或治疗方案，也不能替代医生、临床营养师或药物。文中所有目标值都是饮食目标，不是处方；肾病、孕期、痛风急性期与贫血分型请遵医嘱。
+    </div>
+
+    <div class="lic">
+      <dl>
+        <dt>许可证</dt><dd>PolyForm Noncommercial License 1.0.0</dd>
+        <dt>性质</dt><dd>非 OSI 开源；商业使用需授权</dd>
+        <dt>版本</dt><dd>0.2.0（0.2.0+2）</dd>
+        <dt>更新日期</dt><dd>2026-10-27</dd>
+        <dt>作者</dt><dd>长沙市果垂素宇工程设计有限公司</dd>
+        <dt>包名</dt><dd>com.eavebounty.plainjoy</dd>
+        <dt>平台</dt><dd>Android 优先，附 Web / Linux / Windows 产物</dd>
+      </dl>
+      <div>
+        <p>个人学习、研究与非营利使用免费；<b>任何商业用途需另行书面授权</b>，条款见仓库 <a href="https://github.com/EaveBounty/plainjoy/blob/main/COMMERCIAL.md">COMMERCIAL.md</a> 与 <a href="https://github.com/EaveBounty/plainjoy/blob/main/LICENSE">LICENSE</a>。</p>
+        <p>Required Notice: Copyright 2026 长沙市果垂素宇工程设计有限公司。第三方资产（图标、开屏底图）由本仓库脚本生成；字体调用系统 Noto，不随包分发。</p>
+        <p>数据边界：公开仓库只含种子估算；全量成分表为可选本地数据包，不随仓库分发，详见 <a href="https://github.com/EaveBounty/plainjoy/blob/main/docs/DATA.md">docs/DATA.md</a>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>清欢 Plainjoy · v0.2.0 · 2026-10-27 · PolyForm Noncommercial License 1.0.0 · 长沙市果垂素宇工程设计有限公司</p>
+    <p><a href="https://github.com/EaveBounty/plainjoy">源码</a> · <a href="en/" hreflang="en" lang="en">English</a> · <a href="llms.txt">llms.txt</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

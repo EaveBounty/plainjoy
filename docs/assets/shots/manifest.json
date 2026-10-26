@@ -1,0 +1,29 @@
+{
+  "generated": "2026-10-27",
+  "shots": [
+    {
+      "name": "splash",
+      "file": "splash.webp",
+      "width": 780,
+      "height": 1688,
+      "bytes": 16262,
+      "alt": "清欢 Plainjoy 开屏：30 度等腰三角形内，清欢二字沿斜线排列，底部为苏轼词句"
+    },
+    {
+      "name": "onboarding",
+      "file": "onboarding.webp",
+      "width": 780,
+      "height": 1688,
+      "bytes": 70500,
+      "alt": "清欢首次引导页：千金要方引文与四条高密度说明"
+    },
+    {
+      "name": "home",
+      "file": "home.webp",
+      "width": 780,
+      "height": 1688,
+      "bytes": 41708,
+      "alt": "清欢首页：宠物小欢、今日评分与快速记录入口"
+    }
+  ]
+}

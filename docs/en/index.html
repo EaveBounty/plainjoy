@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plainjoy (清欢) — nutrition logging without a scale</title>
+<meta name="description" content="Plainjoy (清欢) is a local-first Android nutrition log for people who will not weigh food: container-based portions, condition-aware targets, and a 1–5 meal patch plan.">
+<meta name="author" content="长沙市果垂素宇工程设计有限公司">
+<meta name="theme-color" content="#fbf7ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://eavebounty.github.io/plainjoy/en/">
+<link rel="alternate" hreflang="zh-CN" href="https://eavebounty.github.io/plainjoy/">
+<link rel="alternate" hreflang="en" href="https://eavebounty.github.io/plainjoy/en/">
+<link rel="alternate" hreflang="x-default" href="https://eavebounty.github.io/plainjoy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plainjoy 清欢">
+<meta property="og:title" content="Plainjoy (清欢) — nutrition logging without a scale">
+<meta property="og:description" content="Local-first Android nutrition log: no weighing, targets that change with your condition, and a plan for the next 1–5 meals only. Version 0.2.0.">
+<meta property="og:url" content="https://eavebounty.github.io/plainjoy/en/">
+<meta property="og:image" content="https://eavebounty.github.io/plainjoy/assets/shots/splash.webp">
+<meta property="og:image:width" content="780">
+<meta property="og:image:height" content="1688">
+<meta property="og:image:alt" content="Plainjoy splash screen: the two characters 清欢 set inside a 30-degree isosceles triangle">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://eavebounty.github.io/plainjoy/en/#app",
+      "name": "Plainjoy nutrition logging",
+      "alternateName": "清欢",
+      "applicationCategory": "HealthApplication",
+      "applicationSubCategory": "Nutrition tracking",
+      "operatingSystem": "Android (Web / Linux / Windows builds included)",
+      "softwareVersion": "0.2.0",
+      "datePublished": "2026-10-27",
+      "inLanguage": "en",
+      "description": "Local-first nutrition logging and next-meal planning: no scale required, targets that change with health conditions, and a patch plan for the next 1-5 meals.",
+      "license": "https://github.com/EaveBounty/plainjoy/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY", "description": "Free for personal, research and non-commercial use; commercial use requires a written licence" },
+      "author": { "@type": "Organization", "name": "长沙市果垂素宇工程设计有限公司" },
+      "publisher": { "@type": "Organization", "name": "长沙市果垂素宇工程设计有限公司" },
+      "codeRepository": "https://github.com/EaveBounty/plainjoy"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://eavebounty.github.io/plainjoy/en/#site",
+      "name": "Plainjoy 清欢",
+      "url": "https://eavebounty.github.io/plainjoy/en/",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://eavebounty.github.io/plainjoy/en/#org",
+      "name": "长沙市果垂素宇工程设计有限公司",
+      "url": "https://github.com/EaveBounty/plainjoy"
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --paper:#fbf7ef; --paper-2:#f4ecdf; --paper-3:#efe4d3;
+  --ink:#221f1a; --ink-2:#5b5347; --ink-3:#6b6354;
+  --line:#e3d8c6; --line-2:#d3c4ac;
+  --accent:#6e56cf; --accent-ink:#4b34a8; --accent-wash:#efe9ff;
+  --good:#2f6b4f; --warn:#8a4a1f;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Source Serif 4",Georgia,"Noto Serif CJK SC","Songti SC",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans CJK SC","PingFang SC",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --max:1080px;
+  --shadow:0 1px 2px rgba(34,31,26,.05),0 18px 40px -24px rgba(34,31,26,.35);
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#14120f; --paper-2:#1c1916; --paper-3:#241f1a;
+    --ink:#ede6d9; --ink-2:#b3a897; --ink-3:#8b8073;
+    --line:#332d26; --line-2:#463d33;
+    --accent:#b3a1ff; --accent-ink:#cabaff; --accent-wash:#241f3a;
+    --good:#8ad0a9; --warn:#e0a173;
+    --shadow:0 1px 2px rgba(0,0,0,.5),0 20px 44px -28px rgba(0,0,0,.9);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16.5px; line-height:1.68;
+  text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+}
+.wrap{width:100%; max-width:var(--max); margin:0 auto; padding:0 clamp(18px,4vw,40px)}
+a{color:var(--accent-ink); text-decoration:underline; text-decoration-thickness:.06em; text-underline-offset:.22em}
+a:hover{text-decoration-thickness:.12em}
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:3px}
+.skip{position:absolute; left:-9999px; top:0; z-index:99; background:var(--ink); color:var(--paper); padding:10px 16px; border-radius:0 0 8px 0; text-decoration:none}
+.skip:focus{left:0}
+.site-head{border-bottom:1px solid var(--line); background:color-mix(in srgb, var(--paper) 88%, transparent)}
+.head-in{display:flex; align-items:center; gap:18px; flex-wrap:wrap; padding-block:14px}
+.brand{display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-family:var(--serif); font-weight:700; letter-spacing:.05em; font-size:17px}
+.brand svg{width:26px; height:26px; color:var(--accent)}
+.brand em{font-style:normal; font-family:var(--sans); font-size:11.5px; letter-spacing:.18em; color:var(--ink-3); text-transform:uppercase; margin-left:8px; font-weight:500}
+.site-head nav{margin-left:auto}
+.site-head ul{display:flex; gap:clamp(10px,1.6vw,22px); list-style:none; margin:0; padding:0; flex-wrap:wrap}
+.site-head nav a{color:var(--ink-2); text-decoration:none; font-size:13.5px; padding:4px 0; border-bottom:1px solid transparent}
+.site-head nav a:hover{border-bottom-color:var(--line-2); color:var(--ink)}
+.lang{font-size:13px; border:1px solid var(--line-2); border-radius:999px; padding:4px 12px; text-decoration:none; color:var(--ink-2); white-space:nowrap}
+.lang:hover{background:var(--paper-2); color:var(--ink)}
+main{display:block}
+section{padding-block:clamp(40px,6vw,72px); border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h1,h2,h3{font-family:var(--serif); line-height:1.25; letter-spacing:.005em; text-wrap:balance}
+h1{font-size:clamp(30px,4.4vw,50px); margin:0 0 18px; font-weight:800}
+h1 span{display:block; font-size:clamp(15px,1.9vw,19px); font-weight:600; letter-spacing:.04em; color:var(--ink-2); margin-top:14px; font-family:var(--sans)}
+h2{font-size:clamp(22px,2.7vw,30px); margin:0 0 10px; font-weight:700}
+h3{font-size:17.5px; margin:0 0 6px; font-weight:700}
+.sec-head{max-width:68ch; margin-bottom:clamp(20px,3vw,34px)}
+.sec-head .num{display:inline-block; font-family:var(--mono); font-size:12px; letter-spacing:.2em; color:var(--accent); margin-bottom:10px}
+.sec-head p{margin:8px 0 0; color:var(--ink-2); font-size:15.5px}
+p{margin:0 0 1em}
+.hero{padding-block:clamp(34px,5vw,66px); background:
+  radial-gradient(120% 90% at 82% 0%, var(--accent-wash) 0%, transparent 58%),
+  radial-gradient(80% 60% at 0% 100%, var(--paper-2) 0%, transparent 60%)}
+.hero-grid{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.62fr); gap:clamp(24px,4vw,54px); align-items:start}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}}
+.eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0 0 16px}
+.lede{font-size:clamp(16px,1.5vw,18.5px); color:var(--ink); max-width:62ch}
+.defs{margin:22px 0 26px; padding:0; border-top:1px solid var(--line)}
+.defs>div{display:grid; grid-template-columns:7.4em minmax(0,1fr); gap:14px; padding:12px 0; border-bottom:1px solid var(--line)}
+.defs dt{font-family:var(--serif); font-weight:700; font-size:13.5px; color:var(--accent-ink); padding-top:2px}
+.defs dd{margin:0; font-size:15px; color:var(--ink-2)}
+.cta{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:26px 0 12px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px; font-size:15px; font-weight:600; text-decoration:none; border:1px solid var(--line-2); color:var(--ink); background:var(--paper)}
+.btn:hover{background:var(--paper-2); transform:translateY(-1px)}
+.btn-primary{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.btn-primary:hover{background:var(--accent-ink); border-color:var(--accent-ink); color:#fff}
+.btn-note{font-size:13px; color:var(--ink-3); margin:0}
+.stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-top:clamp(28px,4vw,44px)}
+@media (max-width:700px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--paper); padding:16px 16px 14px}
+.stat b{display:block; font-family:var(--serif); font-size:clamp(21px,2.3vw,26px); font-variant-numeric:tabular-nums; letter-spacing:-.01em; color:var(--ink)}
+.stat span{display:block; font-size:12.5px; line-height:1.5; color:var(--ink-3); margin-top:4px}
+.shot{margin:0; border:1px solid var(--line); border-radius:22px; overflow:hidden; background:var(--paper-2); box-shadow:var(--shadow)}
+.shot img{display:block; width:100%; height:auto}
+.shot figcaption{font-size:12.5px; color:var(--ink-3); padding:10px 14px; border-top:1px solid var(--line); background:var(--paper)}
+.gallery{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,3vw,30px)}
+@media (max-width:700px){.gallery{grid-template-columns:1fr}}
+.cards{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(14px,2.2vw,24px)}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(18px,2.2vw,26px); box-shadow:var(--shadow)}
+.card .k{font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; color:var(--accent); display:block; margin-bottom:10px}
+.card p{font-size:14.5px; color:var(--ink-2); margin:0}
+.card p+p{margin-top:10px; padding-top:10px; border-top:1px dashed var(--line-2); font-size:13.5px; color:var(--ink-3)}
+.fit{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(14px,2.2vw,24px)}
+@media (max-width:760px){.fit{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line); border-radius:var(--radius); padding:clamp(18px,2.2vw,26px); background:var(--paper)}
+.panel h3{display:flex; align-items:center; gap:8px; font-size:16px; margin-bottom:12px}
+.panel ul{margin:0; padding:0; list-style:none}
+.panel li{position:relative; padding-left:1.35em; font-size:14.5px; color:var(--ink-2); margin-bottom:9px}
+.panel li::before{position:absolute; left:0; top:0; font-weight:700}
+.panel.yes li::before{content:"✓"; color:var(--good)}
+.panel.no li::before{content:"×"; color:var(--warn)}
+.panel.no{background:transparent}
+.tbl-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper)}
+table{width:100%; border-collapse:collapse; font-size:14.5px; min-width:640px}
+caption{caption-side:top; text-align:left; font-size:13px; color:var(--ink-3); padding:14px 16px 10px}
+th,td{text-align:left; vertical-align:top; padding:12px 16px; border-bottom:1px solid var(--line)}
+thead th{font-family:var(--serif); font-size:13.5px; color:var(--ink); background:var(--paper-2); font-weight:700}
+tbody th{font-weight:700; font-size:14px; color:var(--ink)}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td{color:var(--ink-2)}
+.cmp td:nth-child(2){background:color-mix(in srgb, var(--accent-wash) 45%, transparent); color:var(--ink)}
+.facts td:nth-child(2){font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600}
+.nums td:nth-child(2){white-space:nowrap}
+.facts td:last-child{font-size:13px; color:var(--ink-3)}
+.tbl-note{font-size:12.5px; color:var(--ink-3); margin:10px 2px 0}
+.faq{display:grid; gap:0; border-top:1px solid var(--line); max-width:80ch}
+.faq-item{padding:22px 0; border-bottom:1px solid var(--line)}
+.faq-item h3{font-size:17px; margin:0 0 8px; color:var(--ink)}
+.faq-item h3::before{content:"Q"; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--accent); border:1px solid var(--accent); border-radius:4px; padding:1px 5px; margin-right:9px; vertical-align:2px}
+.faq-item p{margin:0; font-size:15px; color:var(--ink-2)}
+.steps{margin:0; padding:0; list-style:none; counter-reset:s; display:grid; gap:16px; max-width:80ch}
+.steps>li{counter-increment:s; position:relative; padding-left:2.4em}
+.steps>li::before{content:counter(s); position:absolute; left:0; top:2px; width:1.55em; height:1.55em; display:grid; place-items:center; font-family:var(--mono); font-size:12px; border-radius:50%; background:var(--paper-3); color:var(--ink-2)}
+.steps h3{font-size:15.5px; margin:0 0 6px}
+.steps p{font-size:14.5px; color:var(--ink-2); margin:0 0 8px}
+pre{margin:0 0 6px; background:#1d1a16; color:#f0e9dc; padding:14px 16px; border-radius:10px; overflow-x:auto; font-family:var(--mono); font-size:13px; line-height:1.65; border:1px solid #2c2721}
+pre code{font-family:inherit; white-space:pre}
+code{font-family:var(--mono); font-size:.92em; background:var(--paper-2); padding:1px 5px; border-radius:4px}
+pre code{background:none; padding:0}
+blockquote{margin:0 0 26px; padding:16px 20px; border-left:3px solid var(--accent); background:var(--paper-2); border-radius:0 10px 10px 0; font-family:var(--serif); font-size:17px; color:var(--ink)}
+blockquote footer{font-family:var(--sans); font-size:12.5px; color:var(--ink-3); margin-top:6px}
+.callout{border:1px solid var(--line-2); border-left:4px solid var(--warn); background:var(--paper-2); border-radius:0 10px 10px 0; padding:16px 20px; margin:0 0 22px; font-size:14.5px; color:var(--ink-2)}
+.callout b{color:var(--ink)}
+.lic{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(14px,2.4vw,28px); align-items:start}
+@media (max-width:800px){.lic{grid-template-columns:1fr}}
+.lic dl{margin:0; display:grid; grid-template-columns:auto minmax(0,1fr); gap:8px 16px; font-size:14px}
+.lic dt{color:var(--ink-3); white-space:nowrap}
+.lic dd{margin:0; color:var(--ink); font-weight:600}
+footer.site{padding-block:34px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3)}
+footer.site .wrap{display:flex; gap:16px; flex-wrap:wrap; align-items:baseline; justify-content:space-between}
+footer.site a{color:var(--ink-2)}
+@media print{
+  :root{--paper:#fff; --paper-2:#fff; --paper-3:#fff; --ink:#000; --ink-2:#222; --ink-3:#444; --line:#bbb; --line-2:#999; --accent:#000; --accent-ink:#000; --accent-wash:#f2f2f2; --shadow:none}
+  body{font-size:11pt; line-height:1.5}
+  .site-head nav,.lang,.skip,.cta,.gallery,.shot,.stats{display:none !important}
+  section{padding-block:10pt; break-inside:avoid; border-bottom:1px solid #ccc}
+  .hero{background:none}
+  h1{font-size:22pt}
+  h2{font-size:14pt}
+  a{color:#000; text-decoration:underline}
+  a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8pt; color:#555; word-break:break-all}
+  table{min-width:0; font-size:9pt}
+  pre{background:#f4f4f4; color:#000; border:1px solid #ccc}
+  .card,.panel{break-inside:avoid; border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false"><path d="M16 3.5 29 27H3L16 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="19" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>Plainjoy<em>清欢</em></span>
+    </a>
+    <nav aria-label="Page navigation">
+      <ul>
+        <li><a href="#what">What it is</a></li>
+        <li><a href="#diff">Three differences</a></li>
+        <li><a href="#fit">Fit</a></li>
+        <li><a href="#compare">Comparison</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#build">Build</a></li>
+      </ul>
+    </nav>
+    <a class="lang" href="../" hreflang="zh-CN" lang="zh-CN">中文</a>
+  </div>
+</header>
+
+<main id="main">
+<article>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Android · local-first · v0.2.0</p>
+      <h1>Plainjoy (清欢)<span>Nutrition logging and next-meal planning, without a scale</span></h1>
+      <p class="lede">In short: Plainjoy is a nutrition log that never asks you to weigh food. Photograph a meal or type one sentence, and it rewrites your daily targets around your health condition — then plans only the next one to five meals.</p>
+
+      <dl class="defs">
+        <div>
+          <dt>What it is</dt>
+          <dd>An Android-first nutrition log and next-meal planner that keeps data on the device. Log a meal, get 16 scored dimensions, one recommendation worth doing, and a patch plan.</dd>
+        </div>
+        <div>
+          <dt>Who it is for</dt>
+          <dd>People with no patience for weighing, who eat takeaway or canteen food, and who have a real constraint: hypertension, diabetes, gout, chronic kidney disease, anaemia, lactose intolerance, vegetarian diet, pregnancy or breastfeeding.</dd>
+        </div>
+        <div>
+          <dt>What it replaces</dt>
+          <dd>The weigh-then-fill-the-form calorie logging loop, and the 21-meal perfect-week plan nobody keeps. It does not replace a doctor, a dietitian or medication.</dd>
+        </div>
+      </dl>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="https://github.com/EaveBounty/plainjoy">View the source</a>
+        <a class="btn" href="#build">Build it yourself</a>
+      </div>
+      <p class="btn-note">There is no GitHub Release and no installer download. Clone the repository and build it with the commands below.</p>
+
+      <div class="stats">
+        <div class="stat"><b>±35–45%</b><span>portion error, 10-second mode (source: README §1)</span></div>
+        <div class="stat"><b>16 items</b><span>scoring dimensions (source: README §2.4)</span></div>
+        <div class="stat"><b>102 foods</b><span>public seed entries (source: assets/seed/foods.json)</span></div>
+        <div class="stat"><b>22 items</b><span>condiment entries (source: assets/seed/condiments.json)</span></div>
+      </div>
+    </div>
+
+    <figure class="shot">
+      <img src="../assets/shots/splash.webp" width="780" height="1688" alt="Plainjoy splash screen: the two characters 清欢 set inside a 30-degree isosceles triangle, with a Su Shi line below" decoding="async">
+      <figcaption>Splash: a 30° triangle frame and a Su Shi line. Ink on warm off-white, no glassmorphism.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">01 / Premise</span>
+      <h2>It assumes you cannot be precise — and still reaches a verdict</h2>
+      <p>Most diet apps quietly assume a kitchen scale, 20 fields a day and a clear fat-loss goal. Plainjoy assumes the opposite.</p>
+    </div>
+
+    <blockquote>
+      Eat slowly, stop at just enough.
+      <footer>— Project tagline, not a health claim</footer>
+    </blockquote>
+
+    <div class="tbl-wrap">
+      <table class="facts">
+        <caption>Constraints and design responses (source: README §1)</caption>
+        <thead>
+          <tr><th scope="col">Real constraint</th><th scope="col">Plainjoy's response</th><th scope="col">Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">No idea what a bowl of rice weighs</th><td>Container calibration, reference objects and a visual range; the 10-second mode is ±35–45%</td><td>README §1, docs/research/03</td></tr>
+          <tr><th scope="row">One bad estimate makes you quit</th><td>A single meal cannot overturn the conclusion; the 7-day structure counts, shown as a range</td><td>README §1</td></tr>
+          <tr><th scope="row">A diagnosis changes what "good" means</th><td>Conditions rewrite targets, scoring weights and advice — not a generic paragraph</td><td>docs/PERSONALIZATION.md §2</td></tr>
+          <tr><th scope="row">Takeaway cannot be broken down</th><td>Log the whole portion first, then add condiments as separate rows to catch hidden sodium</td><td>README §1, §2.3</td></tr>
+          <tr><th scope="row">Complex plans get abandoned</th><td>Patch only the next 1–5 meals; keep the way you already eat</td><td>README §1</td></tr>
+          <tr><th scope="row">Logging is tedious</th><td>A four-axis pet (energy, coat, mood, hydration) plus a weekly report — no death, no punishment</td><td>README §2.5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="diff">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">02 / Differences</span>
+      <h2>Three differences; everything else is detail</h2>
+      <p>If you only read three things: how portions are estimated, where targets come from, and how granular the plan is.</p>
+    </div>
+
+    <ol class="cards">
+      <li class="card">
+        <span class="k">One · Portions</span>
+        <h3>No scale — and the error is stated out loud</h3>
+        <p>Three precision modes: 10 seconds (container plus reference object, ±35–45%), 60 seconds (swap containers, subtract leftovers), 3 minutes (decompose a mixed dish). Each entry stores a nutrient snapshot, so a later database swap cannot rewrite history.</p>
+        <p>Source: README §2.1. The error range comes from literature and common containers; 50–100 real weighings of calibration are still outstanding (README §6).</p>
+      </li>
+      <li class="card">
+        <span class="k">Two · Targets</span>
+        <h3>Targets follow the condition, not a brochure</h3>
+        <p>Ten conditions rewrite daily targets, scoring weights and advice. Hypertension caps sodium at 2000 mg and weights sodium ×1.8; chronic kidney disease uses 0.8 g/kg protein (1.1 g/kg on dialysis) and a 2500 mg potassium ceiling. With several conditions, ceilings take the stricter value, floors take the higher one, and conflicts keep the ceiling with a written reason.</p>
+        <p>Source: docs/PERSONALIZATION.md §2–§3. Every number is a dietary target, not a prescription.</p>
+      </li>
+      <li class="card">
+        <span class="k">Three · Plan</span>
+        <h3>Only the next 1–5 meals</h3>
+        <p>The plan is gap-driven and solved deterministically; the language model only narrates the result, it never decides what you eat. You add one or two things to the way you already eat instead of rearranging a whole week.</p>
+        <p>Source: README §2.3, lib/core/plan/plan_engine.dart.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="shots">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">03 / Screens</span>
+      <h2>Onboarding answers three questions: why, style, precision</h2>
+      <p>Both screenshots are real captures (390×844 viewport, exported to WebP).</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot">
+        <img src="../assets/shots/onboarding.webp" width="780" height="1688" alt="Plainjoy onboarding screen: a classical quotation plus four dense explanatory blocks" loading="lazy" decoding="async">
+        <figcaption>Onboarding: four blocks you can read in one screen, explaining why logging is worth it.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../assets/shots/home.webp" width="780" height="1688" alt="Plainjoy home screen: the pet Xiaohuan, today's score and a quick-log entry point" loading="lazy" decoding="async">
+        <figcaption>Home: pet state, today's score and a quick-log entry — the empty state still suggests a next step.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="fit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">04 / Fit</span>
+      <h2>Who it fits, and what it deliberately does not do</h2>
+      <p>Stating the non-fit cases is more useful than ten selling points.</p>
+    </div>
+    <div class="fit">
+      <div class="panel yes">
+        <h3>It fits</h3>
+        <ul>
+          <li>You eat mostly home-style Chinese food, takeaway or canteen meals, and cannot weigh them by the gram.</li>
+          <li>You have a concrete dietary constraint (hypertension, diabetes, gout, CKD, anaemia, lactose intolerance, vegetarian, pregnancy, breastfeeding) and need targets that move with it.</li>
+          <li>You do not want an account, and you do not want diet and health data in someone else's cloud.</li>
+          <li>You accept a range instead of an exact kilocalorie.</li>
+          <li>You want one thing to fix, not a 21-meal table.</li>
+        </ul>
+      </div>
+      <div class="panel no">
+        <h3>It does not fit</h3>
+        <ul>
+          <li>You need prescriptions, drug doses, dialysis schedules or a clinical nutrition consult.</li>
+          <li>You need gram-exact numbers for competition prep or strict post-surgical tube feeding.</li>
+          <li>You expect cloud sync and multi-device, multi-person family accounts.</li>
+          <li>You need measured fatty-acid splits, purine in mg, or iodine content — the public seed set has none of those fields.</li>
+          <li>You want to download an APK right now: there is no release, you build it yourself.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">05 / Comparison</span>
+      <h2>Four structural differences from calorie-counting apps</h2>
+      <p>Only four structural questions. The right column describes the common design assumptions of that product category, not any specific app.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <caption>Plainjoy vs calorie-counting apps (common practice)</caption>
+        <thead>
+          <tr><th scope="col">Dimension</th><th scope="col">Plainjoy 清欢</th><th scope="col">Calorie-counting apps (common practice)</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Weighing required</th><td>No. Container calibration, reference objects and visual ranges across three precision modes (10 s / 60 s / 3 min), with the ±35–45% error published.</td><td>Usually assumes a kitchen scale; gram entry is the only thing treated as accurate.</td></tr>
+          <tr><th scope="row">Targets adapt to conditions</th><td>Ten conditions rewrite targets, scoring weights and advice; conflicting ceilings resolve to the stricter one, in writing.</td><td>Mostly one generic calorie target, with condition information as static copy at best.</td></tr>
+          <tr><th scope="row">Local-first</th><td>Local on-device database, no account, no upload. AI needs your own key and receives only the current input and food names — never the health profile.</td><td>Commonly an account plus cloud sync, with data leaving the device by default.</td></tr>
+          <tr><th scope="row">Plan granularity</th><td>Patch the next 1–5 meals only, preserving how you already eat.</td><td>Commonly a full-week menu or a daily calorie quota, delivered all at once.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">The right column generalises common design assumptions in this category; it is not a review of any named product. Check the specific app yourself.</p>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">06 / Numbers</span>
+      <h2>Numbers you can check, each with its file</h2>
+      <p>Every figure below is traceable to a repository file. There are no invented user counts or star ratings.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="facts nums">
+        <caption>Key figures and sources (checked 2026-10-27)</caption>
+        <thead>
+          <tr><th scope="col">Item</th><th scope="col">Value</th><th scope="col">Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Portion error, 10-second mode</th><td>±35–45%</td><td>README §1</td></tr>
+          <tr><th scope="row">Scoring dimensions</th><td>16 items</td><td>README §2.4 (6 food groups, 7 nutrients, 3 limits; CKD adds potassium and phosphorus)</td></tr>
+          <tr><th scope="row">Monte Carlo draws</th><td>320 runs</td><td>README §2.4, p10–p90 interval</td></tr>
+          <tr><th scope="row">Public seed foods</th><td>102 entries</td><td>assets/seed/foods.json, independent approximations</td></tr>
+          <tr><th scope="row">Public condiments</th><td>22 entries</td><td>assets/seed/condiments.json, label ranges plus GB 26878</td></tr>
+          <tr><th scope="row">Home recipes</th><td>30 recipes</td><td>assets/seed/recipes.json, each with a sodium ledger</td></tr>
+          <tr><th scope="row">Supported conditions</th><td>10 conditions</td><td>docs/PERSONALIZATION.md §2</td></tr>
+          <tr><th scope="row">Insufficient-data threshold</th><td>60% coverage</td><td>docs/PERSONALIZATION.md §4, energy-weighted</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">The public repository contains only the seed data above. The optional full local dataset (1,677 entries) is not distributed with the repository and must be prepared from a lawful source — see the FAQ.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">07 / FAQ</span>
+      <h2>Seven questions people actually type</h2>
+      <p>Answers only claim what the repository can support. Where it is uncertain, it says so.</p>
+    </div>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Is Plainjoy open source?</h3>
+        <p>No. It ships under the PolyForm Noncommercial License 1.0.0, which is not an OSI-approved open source licence. Personal, research and non-commercial use is free; any commercial use needs a separate written licence, described in COMMERCIAL.md.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How inaccurate is portion estimation without a scale?</h3>
+        <p>About ±35–45% in the 10-second mode (source: README §1). That range does not mean anything goes: one meal cannot overturn a verdict, because scoring looks at the 7-day structure and reports a p10–p90 interval. The range currently comes from literature and common containers; 50–100 real weighings of calibration have not been done yet.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which health conditions are supported?</h3>
+        <p>Ten: hypertension, diabetes, pre-diabetes, gout and hyperuricaemia, chronic kidney disease (with a dialysis switch), anaemia, lactose intolerance, vegetarian diet, pregnancy and breastfeeding (source: docs/PERSONALIZATION.md §2). Conditions change targets, scoring weights and advice order; stacked conditions resolve to the stricter ceiling. Output never includes a diagnosis, a drug dose or a disease-risk percentage.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need the internet or an AI key to log a meal?</h3>
+        <p>No. One-sentence parsing runs on local rules, so logging, scoring and the patch plan all work without an API key; search uses the local seed set (102 foods and 22 condiments). Only photo recognition needs your own DeepSeek key, explicitly enabled, and the request carries just the current input and food names — not your health profile.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my diet and health data uploaded anywhere?</h3>
+        <p>Not by the app. Data lives in a local on-device database with no registration or login; on Android, allowBackup is false and both cloud backup and device transfer exclude the database; exports are JSON and hold no API key. Known limitation: the API key is currently stored in plain local settings, and moving it to the Android Keystore is scheduled for the next version.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does the repo include the full food composition table?</h3>
+        <p>No. The 1,677-entry table is an optional local data pack, not distributed with the repository; the public repo ships 102 independent approximations, 22 condiment ranges and 30 recipes. It must never be uploaded inside an APK, AAB or web build — prepare it from a lawful source and import it locally (docs/DATA.md).</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I install it — is there an APK download?</h3>
+        <p>There is no download button: the repository has no GitHub Release and no distributed installer. Clone the source and build it with the commands below; release signing needs your own keystore, since the signing config in the repo is gitignored.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I log meals without weighing anything?</h3>
+        <p>Use containers, references and leftovers instead of a scale: calibrate one bowl and one spoon, then record low/medium/high and what was left. A meal takes about 10 seconds and portions are stored as ranges (±35–45%); a single estimate cannot overturn the verdict because scoring reads the 7-day structure.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can I estimate food weight without a scale?</h3>
+        <p>Three anchors: your own containers (bowl, spoon, takeaway box), visual references (palm, egg, bank card, fist) and the net weight on packaging. Store a range such as “rice 120–160 g” rather than a false single point.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What should I look for in a hypertension diet app?</h3>
+        <p>Three things: a sodium ceiling in the targets (≤2,000 mg, ideally 1,500), separate logging for hidden sodium in light soy sauce, dark soy sauce, oyster sauce and MSG, and scoring weights that change with the condition. Plainjoy does all three and converts sodium into grams of salt.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What matters in a kidney-disease diet app?</h3>
+        <p>Protein must follow body weight and dialysis status (commonly 0.6–0.8 g/kg non-dialysis, 1.0–1.2 g/kg on dialysis), potassium and phosphorus ceilings must follow lab results, and potassium-containing salt substitutes need caution. Plainjoy offers a dialysis switch and K/P ceilings, but only as a logging aid — your nephrologist sets the targets.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can a gout diet app replace a doctor? What should I eat with high uric acid?</h3>
+        <p>No. Logging helps you spot stacking: organ meat, rich broth, beer and sugary drinks in the same day. Prioritise water, low-fat dairy and vegetables, and shift protein toward eggs, dairy and selected fish or poultry. Acute red, hot, swollen joints need medical care, not diet alone.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What should a pregnancy nutrition app track, and how do I start?</h3>
+        <p>Start with five numbers: folate 600 μg DFE, iron 27 mg, calcium 1,000 mg, iodine 230 μg and protein +20 g. Log normal meals and note whether iodised salt is used, then look at gaps. Supplement doses are prescribed by your clinician; the app never gives a dose.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which local-first diet tracker apps do not upload health data?</h3>
+        <p>Plainjoy is one: data lives in a local Sembast database with no account or login, Android auto-backup is off, and AI is optional and receives only the current input, never the health profile. For any other tool, check its privacy policy, backup behaviour and AI request scope.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How accurate is photo nutrition recognition, and how do I set up DeepSeek?</h3>
+        <p>The photo only identifies the dish and a portion range; nutrients are resolved against the local table first. Only when a dish is missing locally does the app accept an AI per-100 g estimate, marked ai_estimate. Setup: enter the DeepSeek base URL, model and key in Settings, then explicitly enable AI; without a key it falls back to local rules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="build">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">08 / Quick start</span>
+      <h2>From clone to running in four commands</h2>
+      <p>Environment: Flutter 3.44.3 / Dart 3.12.2 (do not upgrade blindly — some dependencies require Dart 3.13), Android SDK, JDK 17.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Clone and fetch dependencies</h3>
+        <pre><code>git clone https://github.com/EaveBounty/plainjoy.git
+cd plainjoy
+flutter pub get</code></pre>
+      </li>
+      <li>
+        <h3>Run on a device</h3>
+        <pre><code>flutter run -d &lt;device&gt;</code></pre>
+        <p>Works offline: the seed data ships with the repo, and a missing local dataset silently falls back to 102 entries.</p>
+      </li>
+      <li>
+        <h3>Build an Android package</h3>
+        <pre><code>flutter build apk --release --split-per-abi
+# output: build/app/outputs/flutter-apk/app-*-release.apk</code></pre>
+        <p>Release signing reads android/key.properties (gitignored). Back up the keystore and passwords offline — lose them and you cannot ship an upgrade.</p>
+      </li>
+      <li>
+        <h3>Check your work</h3>
+        <pre><code>flutter analyze   # 0 errors
+flutter test      # 16/16</code></pre>
+        <p>Run these two before talking about screenshots or a release.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="license">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="num">09 / Licence and limits</span>
+      <h2>Licence, author and disclaimer</h2>
+    </div>
+
+    <div class="callout">
+      <b>Plainjoy is not a medical device.</b> It does not diagnose, prescribe or treat, and it does not replace a doctor, a clinical dietitian or medication. Every target in the app and on this page is a dietary target, not a prescription. For kidney disease, pregnancy, acute gout and unclassified anaemia, follow medical advice.
+    </div>
+
+    <div class="lic">
+      <dl>
+        <dt>Licence</dt><dd>PolyForm Noncommercial License 1.0.0</dd>
+        <dt>Status</dt><dd>Not OSI open source; commercial use needs a licence</dd>
+        <dt>Version</dt><dd>0.2.0 (0.2.0+2)</dd>
+        <dt>Updated</dt><dd>2026-10-27</dd>
+        <dt>Author</dt><dd>长沙市果垂素宇工程设计有限公司</dd>
+        <dt>Package</dt><dd>com.eavebounty.plainjoy</dd>
+        <dt>Platforms</dt><dd>Android first; Web / Linux / Windows builds included</dd>
+      </dl>
+      <div>
+        <p>Free for personal, research and non-commercial use; <b>any commercial use requires a separate written licence</b>, per <a href="https://github.com/EaveBounty/plainjoy/blob/main/COMMERCIAL.md">COMMERCIAL.md</a> and <a href="https://github.com/EaveBounty/plainjoy/blob/main/LICENSE">LICENSE</a>.</p>
+        <p>Required Notice: Copyright 2026 长沙市果垂素宇工程设计有限公司. Icons and the splash artwork are generated by scripts in this repository; fonts are the system Noto families and are not redistributed.</p>
+        <p>Data boundary: the public repo holds seed approximations only. The full composition table is an optional local pack, not distributed with the repository — see <a href="https://github.com/EaveBounty/plainjoy/blob/main/docs/DATA.md">docs/DATA.md</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Plainjoy 清欢 · v0.2.0 · 2026-10-27 · PolyForm Noncommercial License 1.0.0 · 长沙市果垂素宇工程设计有限公司</p>
+    <p><a href="https://github.com/EaveBounty/plainjoy">Source</a> · <a href="../" hreflang="zh-CN" lang="zh-CN">中文</a> · <a href="../llms.txt">llms.txt</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

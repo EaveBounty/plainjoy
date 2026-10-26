@@ -1,0 +1,40 @@
+# 清欢 · Plainjoy
+
+> 慢慢吃，吃到刚好。
+
+- 页面（中文，默认）：https://eavebounty.github.io/plainjoy/
+- Page (English): https://eavebounty.github.io/plainjoy/en/
+- 源码：https://github.com/EaveBounty/plainjoy
+- 版本：0.2.0（0.2.0+2）· 更新：2026-10-27
+
+## 这是什么
+
+清欢（Plainjoy）是一个本地优先的 Android 营养记录与下一餐规划 app。不要求称重：拍照或一句话记一餐，按病况改写每日目标，只规划下一餐 1–5 餐「补丁餐」，再看 16 项营养充足度。
+
+- 平台：Android 优先；Web / Linux / Windows 为附带产物
+- 包名：com.eavebounty.plainjoy
+- 语言：中文（简体）；英文页面见 /en/
+- 不是医疗器械：不提供诊断、处方或治疗方案
+
+## 关键数字（均可在仓库文件中核对）
+
+- 10 秒档份量误差 ±35–45%（README §1）
+- 评分 16 项：食物组 6 / 营养素 7 / 限制项 3，CKD 另加钾、磷（README §2.4）
+- 蒙特卡洛 320 次，p10–p90 区间（README §2.4）
+- 公开种子食物 102 条（assets/seed/foods.json，独立近似估算）
+- 公开调味品 22 条（assets/seed/condiments.json，标签区间 + GB 26878）
+- 家常食谱 30 个（assets/seed/recipes.json，含钠账本）
+- 支持病况 10 类（docs/PERSONALIZATION.md §2）
+- 数据不足阈值：能量加权覆盖率 < 60% 时该项退出分母（docs/PERSONALIZATION.md §4）
+
+## 数据边界
+
+- 公开仓库只含种子估算与统计 manifest。
+- 可选的本地全量数据包（1677 条）不随仓库分发，禁止打进 APK / AAB / Web 产物上传。详见 docs/DATA.md。
+- 没有 GitHub Release，不提供安装包下载；请自行构建。
+
+## 许可
+
+PolyForm Noncommercial License 1.0.0 —— 非 OSI 开源许可证；个人、研究与非营利使用免费，商业使用需另行书面授权（COMMERCIAL.md）。
+
+作者：长沙市果垂素宇工程设计有限公司
