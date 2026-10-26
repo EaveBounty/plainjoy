@@ -3,6 +3,9 @@ primary_token: plainjoy
 keywords:
   primary:
   - plainjoy
+  - 有味清欢
+  - youweiqinghuan
+  aliases:
   - 清欢
   - nutrition companion
   english:
@@ -68,6 +71,8 @@ intents:
   - DeepSeek 饮食记录
 queries:
 - plainjoy
+- 有味清欢
+- 有味清欢 营养记录
 - 清欢 营养记录
 guardrails:
   max_topics: 20
@@ -87,3 +92,11 @@ history:
   audit_before: 73
   audit_after: 96
   note: 首轮可发现性整改：双语落地页 + 20 topics + 131 字 description + Pages
+- date: '2026-10-27'
+  cycle: 2
+  changes:
+  - description
+  - brand_keywords
+  audit_before: 96
+  audit_after: 96
+  note: 品牌改名（清欢→有味清欢），非 SEO churn；primary 关键词换成 有味清欢/youweiqinghuan，清欢降为历史别名。

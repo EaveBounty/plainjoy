@@ -191,7 +191,7 @@ class AppDisclaimer extends StatelessWidget {
     return const InfoNote(
       icon: Icons.medical_information_outlined,
       title: '免责声明',
-      text: '清欢不是医疗器械，不提供诊断、处方或治疗方案。营养数值为估算，存在误差；'
+      text: '有味清欢不是医疗器械，不提供诊断、处方或治疗方案。营养数值为估算，存在误差；'
           '「需就医」是就医提示，不是诊断结论。如有急症或明显症状，请及时就医。',
     );
   }

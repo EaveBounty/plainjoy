@@ -9,7 +9,9 @@ import '../../core/theme/app_tokens.dart';
 /// 版式几何：
 /// - 三角形顶点在上方 [apexY]，底边在 [baseY]，顶角固定 30°，底角 75°；
 /// - 「清」「欢」沿 30° 斜线排布，第二个字的顶端与第一个字的竖直中点对齐
-///   （水平位移 = 0.5em / tan30° = 0.866em，竖直位移 = 0.5em）。
+///   （水平位移 = 0.5em / tan30° = 0.866em，竖直位移 = 0.5em）；
+/// - 品牌全名为「有味清欢」：「有味」以约 0.37 倍主标字号叠在「清」上方，
+///   与「清」左对齐略缩进，形成「有味 / 清欢」两级；主标几何保持不变。
 ///
 /// 动画总时长 720ms；系统开启「减少动态效果」时直接呈现终态。
 class SplashPage extends StatefulWidget {
@@ -73,6 +75,10 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
     );
 
     final left = w / 2 - fs * 0.933;
+    final eyebrowFs = fs * 0.37;
+    final textScale = media.textScaler.scale(1.0);
+    final qingTop = apexY + fs * 1.02;
+    final eyebrowTop = qingTop - eyebrowFs * textScale - fs * 0.30;
 
     return Scaffold(
       backgroundColor: t.background,
@@ -123,10 +129,44 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
             ),
           ),
 
+          // ---- 有味：主标上方的小字眉标 ----
+          Positioned(
+            left: left + fs * 0.04,
+            top: eyebrowTop,
+            width: fs * 2.2,
+            height: eyebrowFs * textScale * 1.2,
+            child: _FadeUp(
+              animation: _step(0.1, 0.46),
+              dy: 6,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '有味',
+                  maxLines: 1,
+                  style: TextStyle(
+                    fontFamily: t.titleFont,
+                    fontFamilyFallback: [
+                      'Noto Serif SC',
+                      'Noto Sans CJK SC',
+                      'Noto Sans SC',
+                      'sans-serif',
+                    ],
+                    fontSize: eyebrowFs,
+                    height: 1,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: eyebrowFs * 0.15,
+                    color: t.ink.withValues(alpha: 0.72),
+                  ),
+                ),
+              ),
+            ),
+          ),
+
           // ---- 清 / 欢：30° 斜向、半字对齐 ----
           Positioned(
             left: left,
-            top: apexY + fs * 1.02,
+            top: qingTop,
             child: _FadeUp(
               animation: _step(0.16, 0.52),
               child: Text(
@@ -145,7 +185,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
           ),
           Positioned(
             left: left + fs * 0.866,
-            top: apexY + fs * 1.02 + fs * 0.5,
+            top: qingTop + fs * 0.5,
             child: _FadeUp(
               animation: _step(0.28, 0.64),
               child: Text(
@@ -206,7 +246,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
                             borderRadius: BorderRadius.circular(1.5),
                           ),
                           child: const Text(
-                            '清',
+                            '味',
                             style: TextStyle(
                               color: Color(0xFFFFF6EC),
                               fontSize: 10,

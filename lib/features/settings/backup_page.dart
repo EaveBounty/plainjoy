@@ -75,7 +75,7 @@ class _BackupPageState extends ConsumerState<BackupPage> {
     try {
       final bytes = Uint8List.fromList(utf8.encode(text));
       await FilePicker.saveFile(
-        dialogTitle: '保存清欢备份',
+        dialogTitle: '保存有味清欢备份',
         fileName: _fileName(),
         bytes: bytes,
         mimeType: 'application/json',
@@ -94,7 +94,7 @@ class _BackupPageState extends ConsumerState<BackupPage> {
   Future<void> _pickFile() async {
     try {
       final file = await FilePicker.pickFile(
-        dialogTitle: '选择清欢备份',
+        dialogTitle: '选择有味清欢备份',
         // Android 的 DocumentsUI 对自定义扩展名支持不一致，先取任意文件再校验内容
         type: FileType.any,
       );
@@ -125,7 +125,7 @@ class _BackupPageState extends ConsumerState<BackupPage> {
       return;
     }
     if (!raw.startsWith('{')) {
-      setState(() => _error = '这不像一份清欢 JSON 备份。请检查文件或粘贴内容。');
+      setState(() => _error = '这不像一份有味清欢 JSON 备份。请检查文件或粘贴内容。');
       return;
     }
     final t = context.tokens;

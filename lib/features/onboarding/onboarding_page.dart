@@ -73,7 +73,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('清欢', style: Theme.of(context).textTheme.headlineSmall),
+                  Text('有味清欢', style: Theme.of(context).textTheme.headlineSmall),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(
@@ -225,7 +225,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
           ),
           const SizedBox(height: 12),
           Text(
-            '清欢不是医疗器械，不提供诊断、处方或治疗方案。',
+            '有味清欢不是医疗器械，不提供诊断、处方或治疗方案。',
             style: Theme.of(context).textTheme.labelSmall,
           ),
         ],

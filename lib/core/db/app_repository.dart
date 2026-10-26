@@ -324,7 +324,7 @@ class AppRepository {
     final decoded = jsonDecode(raw);
     if (decoded is! Map) throw const FormatException('备份格式不正确');
     final map = decoded.map((key, value) => MapEntry(key.toString(), value));
-    if (map['app'] != 'plainjoy') throw const FormatException('不是清欢的备份文件');
+    if (map['app'] != 'plainjoy') throw const FormatException('不是有味清欢的备份文件');
 
     final stores = <StoreRef<String, Map<String, Object?>>, Object?>{
       database.settings: map['settings'],

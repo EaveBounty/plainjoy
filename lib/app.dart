@@ -25,7 +25,7 @@ class PlainjoyApp extends ConsumerWidget {
     final settings = ref.watch(settingsProvider);
     final theme = settings.theme == ThemeVariant.q ? AppTheme.q() : AppTheme.editorial();
     return MaterialApp(
-      title: '清欢',
+      title: '有味清欢',
       debugShowCheckedModeBanner: false,
       theme: theme,
       themeMode: ThemeMode.light,

@@ -1,6 +1,6 @@
 [中文](README.md) ｜ **English** ｜ [Landing page](https://eavebounty.github.io/plainjoy/en/)
 
-# Plainjoy · 清欢
+# Plainjoy · 有味清欢 (Youwei Qinghuan)
 
 Plainjoy is a local-first Android nutrition tracker and diet logger: estimate portions without a scale, adjust targets by condition, and patch the next meal.
 
@@ -293,5 +293,6 @@ This project is not a medical device and provides no diagnosis, prescription or 
 
 ## 10. Changelog
 
+- 2026-10-27: Chinese brand renamed to 有味清欢 (Youwei Qinghuan); Plainjoy unchanged. Splash, onboarding, settings, platform labels and docs updated.
 - 2026-10-27: renamed to 清欢 / Plainjoy; 30° triangle splash and dense first-run onboarding; pixel-cat icon; local full-table import and coverage-aware scoring; condition targets/weights/advice; recipe seasonings and sodium ledger; DeepSeek JSON nutrition fallback; Android signing/backup/cleartext hardening; multi-review fixes.
 - 2026-10-26: v0.1 with logging, scoring, patch meals, pet, dual themes, backup.

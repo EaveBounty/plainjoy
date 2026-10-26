@@ -1,11 +1,11 @@
 {
-    "name": "清欢",
-    "short_name": "清欢",
+    "name": "有味清欢 Plainjoy",
+    "short_name": "有味清欢",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFF9F2",
     "theme_color": "#6E56CF",
-    "description": "营养充足度管理与饮食计划",
+    "description": "本地优先的营养记录与下一餐规划；不称重估算份量，按病况调整目标。",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

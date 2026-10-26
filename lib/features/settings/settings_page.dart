@@ -128,7 +128,7 @@ class SettingsPage extends ConsumerWidget {
                     children: [
                       SettingsTile(
                         icon: Icons.info_outline_rounded,
-                        title: '关于清欢',
+                        title: '关于有味清欢',
                         subtitle: '版本 $appVersion · 免责声明与误差说明',
                         onTap: () => showAboutSheet(context),
                       ),
@@ -145,7 +145,7 @@ class SettingsPage extends ConsumerWidget {
                   const SizedBox(height: 18),
                   Center(
                     child: Text(
-                      '清欢 $appVersion',
+                      '有味清欢 $appVersion',
                       style: textTheme.labelSmall?.copyWith(color: t.inkTertiary),
                     ),
                   ),

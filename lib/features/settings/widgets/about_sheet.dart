@@ -44,7 +44,7 @@ class AboutSheet extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('清欢', style: textTheme.headlineSmall),
+                      Text('有味清欢', style: textTheme.headlineSmall),
                       const SizedBox(height: 2),
                       Text(
                         '不用称，也知道今天差哪一口。',

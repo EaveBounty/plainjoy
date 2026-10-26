@@ -322,7 +322,7 @@ class AiService {
 
   String _systemPrompt() {
     return '''
-你是「清欢」的餐食解析器。把用户的中文描述或餐食照片解析成 JSON，只输出 JSON，不要解释、不要 Markdown。
+你是「有味清欢」的餐食解析器。把用户的中文描述或餐食照片解析成 JSON，只输出 JSON，不要解释、不要 Markdown。
 
 输出格式：
 {"items":[{
