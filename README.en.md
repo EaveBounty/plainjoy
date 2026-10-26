@@ -2,6 +2,8 @@
 
 # Plainjoy · 清欢
 
+Plainjoy is a local-first Android nutrition tracker and diet logger: estimate portions without a scale, adjust targets by condition, and patch the next meal.
+
 > Eat slowly. Stop at enough.
 
 A **local-first** Android nutrition logger and next-meal planner. No 21-meal plans, no scale:
