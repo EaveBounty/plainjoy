@@ -275,9 +275,9 @@ footer.site a{color:var(--ink-2)}
 
       <div class="cta">
         <a class="btn btn-primary" href="https://github.com/EaveBounty/plainjoy">查看源码</a>
-        <a class="btn" href="#build">自行构建</a>
+        <a class="btn" href="https://github.com/EaveBounty/plainjoy/releases/tag/v0.2.0">下载 APK</a>
       </div>
-      <p class="btn-note">仓库没有 GitHub Release，不提供安装包下载；请克隆后按下方命令自行构建。</p>
+      <p class="btn-note">Android 7.0+，arm64 推荐；公开 APK 只有 102 条种子食物，不含全量成分表。</p>
 
       <div class="stats">
         <div class="stat"><b>±35–45%</b><span>10 秒档份量误差（来源：README §1）</span></div>
@@ -402,7 +402,7 @@ footer.site a{color:var(--ink-2)}
           <li>需要逐克精确的竞技备赛或术后严格管饲计算。</li>
           <li>期望自动同步到云端、多设备实时协作的团队或家庭账号场景。</li>
           <li>需要完整脂肪酸、嘌呤 mg 值、碘含量的实测库——公开种子库没有这些字段。</li>
-          <li>想直接下载安装包：仓库没有 Release，需要自行构建。</li>
+          <li>想直接下载：到 GitHub Releases 取 v0.2.0 的 arm64 APK，不必自己编译。</li>
         </ul>
       </div>
     </div>
@@ -497,7 +497,7 @@ footer.site a{color:var(--ink-2)}
       </div>
       <div class="faq-item">
         <h3>怎么安装？有 APK 下载吗？</h3>
-        <p>没有下载按钮：仓库目前没有 GitHub Release，也没有分发安装包。请克隆源码后自行构建，命令见下一节；发布签名需要你自己的 keystore，仓库里的签名配置已被 gitignore。</p>
+        <p>有。到 GitHub Releases 的 v0.2.0 下载 <code>app-arm64-v8a-release.apk</code>（绝大多数手机）；老 32 位设备用 <code>armeabi-v7a</code>，模拟器用 <code>x86_64</code>。最低 Android 7.0。公开 APK 只含 102 条种子食物，不含全量成分表；安装时需允许未知来源。</p>
       </div>
       <div class="faq-item">
         <h3>不用称重怎么记录饮食？</h3>

@@ -22,6 +22,14 @@ and review 16 adequacy items plus the state of one cat.
 
 ---
 
+## Download
+
+- [v0.2.0 Android APK](https://github.com/EaveBounty/plainjoy/releases/tag/v0.2.0): `arm64-v8a` recommended; `armeabi-v7a` for older 32-bit devices, `x86_64` for emulators
+- Minimum Android 7.0; the public APK ships only the 102-food seed set, not the full composition table
+- Verify with `SHA256SUMS.txt` attached to the release
+
+---
+
 ## 1. What problem it solves
 
 Mainstream diet apps assume you can weigh food, log twenty fields a day, and that your only goal is

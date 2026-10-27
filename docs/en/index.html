@@ -274,9 +274,9 @@ footer.site a{color:var(--ink-2)}
 
       <div class="cta">
         <a class="btn btn-primary" href="https://github.com/EaveBounty/plainjoy">View the source</a>
-        <a class="btn" href="#build">Build it yourself</a>
+        <a class="btn" href="https://github.com/EaveBounty/plainjoy/releases/tag/v0.2.0">Download APK</a>
       </div>
-      <p class="btn-note">There is no GitHub Release and no installer download. Clone the repository and build it with the commands below.</p>
+      <p class="btn-note">Android 7.0+, arm64 recommended. The public APK ships only the 102-food seed set, not the full composition table.</p>
 
       <div class="stats">
         <div class="stat"><b>±35–45%</b><span>portion error, 10-second mode (source: README §1)</span></div>
@@ -401,7 +401,7 @@ footer.site a{color:var(--ink-2)}
           <li>You need gram-exact numbers for competition prep or strict post-surgical tube feeding.</li>
           <li>You expect cloud sync and multi-device, multi-person family accounts.</li>
           <li>You need measured fatty-acid splits, purine in mg, or iodine content — the public seed set has none of those fields.</li>
-          <li>You want to download an APK right now: there is no release, you build it yourself.</li>
+          <li>You want to download an APK right now: get the v0.2.0 arm64 build from GitHub Releases instead of compiling it.</li>
         </ul>
       </div>
     </div>
@@ -496,7 +496,7 @@ footer.site a{color:var(--ink-2)}
       </div>
       <div class="faq-item">
         <h3>How do I install it — is there an APK download?</h3>
-        <p>There is no download button: the repository has no GitHub Release and no distributed installer. Clone the source and build it with the commands below; release signing needs your own keystore, since the signing config in the repo is gitignored.</p>
+        <p>Yes. Download <code>app-arm64-v8a-release.apk</code> from the v0.2.0 GitHub Release (most phones); use <code>armeabi-v7a</code> for older 32-bit devices and <code>x86_64</code> for emulators. Minimum Android 7.0. The public APK ships only the 102-food seed set, not the full composition table; allow unknown sources when installing.</p>
       </div>
       <div class="faq-item">
         <h3>How do I log meals without weighing anything?</h3>

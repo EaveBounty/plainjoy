@@ -31,7 +31,7 @@
 
 - 公开仓库只含种子估算与统计 manifest。
 - 可选的本地全量数据包（1677 条）不随仓库分发，禁止打进 APK / AAB / Web 产物上传。详见 docs/DATA.md。
-- 没有 GitHub Release，不提供安装包下载；请自行构建。
+- Android 安装包：https://github.com/EaveBounty/plainjoy/releases/tag/v0.2.0 （arm64 推荐；公开 APK 只含 102 条种子食物）。
 
 ## 许可
 

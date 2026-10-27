@@ -21,6 +21,14 @@
 
 ---
 
+## 下载
+
+- [v0.2.0 Android APK](https://github.com/EaveBounty/plainjoy/releases/tag/v0.2.0)：`arm64-v8a` 推荐；老 32 位设备用 `armeabi-v7a`，模拟器用 `x86_64`
+- 最低 Android 7.0；公开 APK 只含 102 条种子食物，不含全量成分表
+- 校验：Release 内附 `SHA256SUMS.txt`
+
+---
+
 ## 1. 它解决什么问题
 
 主流饮食 app 的隐含前提是「你能称重、愿意每天记 20 项、并且有明确减脂目标」。
